@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Registration </title>
+</head>
+<body><br><br>
+	<section>
+	  <fieldset>
+	    <legend> REGISTRATION FORM </legend><center>
+		  <form method="post" autocomplete="on">
+		    <label>Firstname: <br><input type="text" placeholder="Firstname" name="Firstname"></input></label><br><br>
+			<label>Lastname: <br><input type="text" placeholder="Lastname" name="Lastname"></input></label><br><br>
+			<label>Email address: <br><input type="email" placeholder="xyz@mymail.com" name="Email"></input></label><br><br>
+			<label>Telephone Number: <br><input type="tel" placeholder="Start with your country code (e.g. +49XXX...)" 
+			name="Telephone-Number" size = "35" pattern="\+[0-9]{1,4}[0-9]{4,13}"></input></label><br><br>
+			<label>Date of Birth: <br><input type= "date" name= "Date-of-birth" min="1950-01-01" max= "2008-01-01"></label><br><br>
+			<label>Choose a Password: <br><input type="password" name="Password"></input></label><br><br>
+			<label>Retype your Password: <br><input type="password" name="Confirmed-Password"></input></label><br><br>
+			<label>Address<br><input type="text" name="Adress" placeholder="Street and House number"></input></label><br><br>
+			<label>Gender: </label>
+			<input type="radio" name="Gender" value="Male"></input><label>Male</label>
+			<input type="radio" name="Gender" value="Female"></input><label>Female</label>
+			<input type="radio" name="Gender" value="Other"></input><label>Other</label><br><br>
+			<input type="checkbox" name="Privacy-policy"></input><label>I have read and agree to the 
+			<a rel="Privacy-policy" target="_blank" href="/Privacy-policy">Privacy Policy</a>. I consent
+			to the processing of my personal data for the purpose of managing my account and processing my orders.</label><br><br>
+			
+			<input type="submit" value="Register now" target="_blank"> <input type="reset" value="Reset"><br><br>
+			<a href=login.html><button>Go Back</button></a>
+		  </form></center>
+	  </fieldset>
+	</section>
+</body>
+</html>
