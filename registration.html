@@ -1,35 +1,73 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<title> Registration </title>
+    <meta charset="utf-8">
+    <title>Customer Registration</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body><br><br>
-	<section>
-	  <fieldset>
-	    <legend> REGISTRATION FORM </legend><center>
-		  <form action="customer.html" method="get" autocomplete="on">
-		    <label>Firstname: <br><input type="text" placeholder="Firstname" name="Firstname"></input></label><br><br>
-			<label>Lastname: <br><input type="text" placeholder="Lastname" name="Lastname"></input></label><br><br>
-			<label>Email address: <br><input type="email" placeholder="xyz@mymail.com" name="Email"></input></label><br><br>
-			<label>Telephone Number: <br><input type="tel" placeholder="Start with your country code (e.g. +49XXX...)" 
-			name="Telephone-Number" size = "35" pattern="\+[0-9]{1,4}[0-9]{4,13}"></input></label><br><br>
-			<label>Date of Birth: <br><input type= "date" name= "Date-of-birth" min="1950-01-01" max= "2008-01-01"></label><br><br>
-			<label>Choose a Password: <br><input type="password" name="Password"></input></label><br><br>
-			<label>Retype your Password: <br><input type="password" name="Confirmed-Password"></input></label><br><br>
-			<label>Address<br><input type="text" name="Adress" placeholder="Street and House number"></input></label><br><br>
-			<label>Gender: </label>
-			<input type="radio" name="Gender" value="Male"></input><label>Male</label>
-			<input type="radio" name="Gender" value="Female"></input><label>Female</label>
-			<input type="radio" name="Gender" value="Other"></input><label>Other</label><br><br>
-			<input type="checkbox" name="Privacy-policy"></input><label>I have read and agree to the 
-			<a rel="Privacy-policy" target="_blank" href="/Privacy-policy">Privacy Policy</a>. I consent
-			to the processing of my personal data for the purpose of managing my account and processing my orders.</label><br><br>
-			
-			<input type="submit" value="Register now" target="_blank"> <input type="reset" value="Reset"><br><br>
-			<a href=login.html><button>Go Back</button></a>
-		  </form></center>
-	  </fieldset>
-	</section>
+<body>
+    <nav>
+        <a href="logout.html"> 
+            <button type="button">Logout</button>
+        </a>
+    </nav>
+
+    <div class="registration-form-container">
+        <h1>Customer Registration</h1>
+
+        <form action="customer.html" method="get" autocomplete="on">
+            <label for="firstname">Firstname:</label><br/>
+            <input type="text" id="firstname" name="Firstname" placeholder="Firstname" required><br/><br/>
+
+            <label for="lastname">Lastname:</label><br/>
+            <input type="text" id="lastname" name="Lastname" placeholder="Lastname" required><br/><br/>
+
+            <label for="email">Email address:</label><br/>
+            <input type="email" id="email" name="Email" placeholder="xyz@mymail.com" required><br/><br/>
+
+            <label for="tel">Telephone Number:</label><br/>
+            <input type="tel" id="tel" name="Telephone-Number" placeholder="Start with your country code (e.g. +49XXX...)" 
+                   size="35" required><br/><br/>
+
+            <label for="dob">Date of Birth:</label><br/>
+            <input type="date" id="dob" name="Date-of-birth" min="1950-01-01" max="2008-01-01" required><br/><br/>
+
+            <label for="password">Choose a Password:</label><br/>
+            <input type="password" id="password" name="Password" required><br/><br/>
+
+            <label for="confirm-password">Retype your Password:</label><br/>
+            <input type="password" id="confirm-password" name="Confirmed-Password" required><br/><br/>
+
+            <label for="address">Address:</label><br/>
+            <input type="text" id="address" name="Address" placeholder="Street and House number" required><br/><br/>
+
+            <label>Gender:</label><br/>
+
+            <div class="gender-options">
+				<input type="radio" id="male" name="Gender" value="Male" required>
+				<label for="male" class="gender-btn">Male</label>
+
+				<input type="radio" id="female" name="Gender" value="Female">
+				<label for="female" class="gender-btn">Female</label>
+
+				<input type="radio" id="other" name="Gender" value="Other">
+				<label for="other" class="gender-btn">Other</label>
+			</div>
+
+            <input type="checkbox" id="privacy" name="Privacy-policy" required>
+            <label for="privacy">
+                I have read and agree to the 
+                <a href="/Privacy-policy" target="_blank" rel="Privacy-policy">Privacy Policy</a>. 
+                I consent to the processing of my personal data for the purpose of managing my account and processing my orders.
+            </label><br/><br/>
+
+            <input type="submit" value="Register Now">
+            <input type="reset" value="Reset"><br/><br/>
+
+            <a href="login.html">
+                <button type="button">Go Back</button>
+            </a>
+        </form>
+    </div>
 </body>
 </html>

@@ -2,13 +2,283 @@
 
 
 /* ====================== TASK 2 ====================== */
+
+/*LOGIN*/
+
 .login-form-container {
-    text-align: center;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  margin: 10rem auto; 
+}
+
+.login-form-container input, .login-form-container button { /*make the input align with the button*/
+  box-sizing: border-box;
+}
+
+.login-form-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+.login-form-container label {
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.login-form-container input[type="text"], .login-form-container input[type="password"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s;
+}
+
+.login-form-container input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-form-container input[type="submit"], .login-form-container button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form-container input[type="submit"]:hover, .login-form-container button:hover {
+  background-color: #0056b3;
+}
+
+.login-form-container a {
+  text-decoration: none;
+  display: block;
+  margin-top: 1rem;
+}
+
+.login-form-container a button {
+  background-color: #6c757d;
+}
+
+.login-form-container a button:hover {
+  background-color: #5a6268;
+}
+
+#back-button > button {
+  background-color: transparent;
+  color: #007bff;
+}
+
+
+@media (max-width: 480px) {
+  .login-form-container {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .login-form-container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Registration Form */
+
+.registration-form-container {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  margin: 6rem auto; 
+}
+
+.registration-form-container input,
+.registration-form-container button {
+  box-sizing: border-box;
+}
+
+.registration-form-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+.registration-form-container label {
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.registration-form-container input[type="text"],
+.registration-form-container input[type="email"],
+.registration-form-container input[type="password"],
+.registration-form-container input[type="date"],
+.registration-form-container input[type="tel"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s;
+}
+
+.registration-form-container input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+.gender-options input[type="radio"] {
+  display: none;
+}
+
+.gender-options .gender-btn {
+  flex: 1;
+  margin: 0 0.3rem;
+  padding: 0.7rem 0;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.gender-options .gender-btn:hover {
+  background-color: #e6e6e6;
+}
+
+.gender-options input[type="radio"]:checked + .gender-btn {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+}
+
+.gender-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 
 
+.registration-form-container input[type="radio"],
+.registration-form-container input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.registration-form-container input[type="checkbox"] + label {
+  display: inline;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: left;
+}
+
+.registration-form-container input[type="submit"],
+.registration-form-container button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registration-form-container input[type="reset"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #6c757d;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.registration-form-container input[type="submit"]:hover,
+.registration-form-container button:hover {
+  background-color: #0056b3;
+}
+
+.registration-form-container input[type="reset"]:hover, .registration-form-container button:hover {
+    background-color: #5a6268;
+}
+
+
+.registration-form-container a button {
+  background-color: transparent;
+  color:#007bff;
+  margin-top: 0.7rem;
+}
+
+.registration-form-container a button:hover {
+  background-color: transparent;
+}
+
+.registration-form-container a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.registration-form-container a:hover {
+  text-decoration: underline;
+}
+
+#back-button > button {
+  background-color: transparent;
+  color: #007bff;
+}
+
+@media (max-width: 480px) {
+  .registration-form-container {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .registration-form-container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
 /* ====================== TASK 3 ====================== */
 body {
-    background-color: red;
+    background-color: rgb(218, 211, 211);
 }
