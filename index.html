@@ -4,44 +4,28 @@
     <meta charset="utf-8">
     <title>Store</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-    <nav>
-            <table width="100%">
-                <tr>
-                    <td><a href="Shoes/menShoeList.html"><b>Shoes</b></a></td>
-                    <td><a href="Clothing/menClothesList.html"><b>Clothing</b></a></td>
-                    <td><a href="login.html"><button type="button"><h3>Customer Login</h3></button></a></td>
-                </tr>
-            </table>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="Shoes/menShoeList.html">Shoes</a>
+            <a href="Clothing/menClothesList.html">Clothing</a>
+        </div>
+        <div class="nav-right">
+            <a href="login.html" class="login-button">Customer Login</a>
+        </div>
     </nav>
-    
-    <hr>
-    <br/>
 
-    <div style="text-align: center;">
+
+   <section class="hero">
+        <img src="img/HPimg.jpg" alt="Store Image">
         <h1>Welcome to our store</h1>
-        <img src="img/HPimg.jpg" width="600" height="400">
+        <a href="about.html" class="hero-button">
+            <button type="button"><h3>About Us</h3></button>
+        </a>
+    </section>
 
 
-        <section>
-        <fieldset>
-            <legend><b>Other</b></legend>
-
-            <a href="about.html">
-                <button type="button"><h3>Seller Information</h3></button>
-            </a>
-
-            <!--          
-            <a href="filter.html">
-                <button type="button"><h3>Filtering DEMO</h3></button>
-            </a>-->
-
-
-        </fieldset>
-        </section>
-    </div>
-
+    
 </body>
 </html>
