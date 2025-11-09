@@ -279,24 +279,26 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: Futura, sans-serif;
     box-sizing: border-box;
+    background-color: #d6d7d8;
 }
+
+
 
 .navbar {
     display: flex;
     justify-content: space-between; 
     align-items: center;
     padding: 20px 40px; 
-    background-color:#64696e; 
-    color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     height: 30px; 
+    background-color: black;
 }
 
 .nav-left a {
     margin-right: 30px;
-    color: white;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 1.2em;
     transition: color 0.3s;
@@ -304,23 +306,23 @@ body, html {
 }
 
 .nav-left a:hover {
-    color: #ffcc00; 
+    text-decoration: underline; 
 }
 
 .nav-right .login-button {
     padding: 10px 20px;
-    background-color: #ffcc00;
-    color: #333;
+    background-color: black;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 1em;
     border-radius: 5px;
     transition: background-color 0.3s;
-    text-decoration: none;
+    text-decoration: none; 
 }
 
 .nav-right .login-button:hover {
-    background-color: #e6b800;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
 }
 
 section {
@@ -343,7 +345,7 @@ section {
 .hero h1 {
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%); 
     color: white;
     font-size: 4em;
@@ -351,10 +353,14 @@ section {
     font-family: Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 }
 
+.hero .Highlighttext{
+  font-style: italic;
+}
+
 .hero-button {
     position: absolute;
-    top: 55%; 
-    left: 50%;
+    top: 60%; 
+    left: 13%;
     transform: translateX(-50%);
 }
 
@@ -364,12 +370,14 @@ section {
     cursor: pointer;
     border: none;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: whitesmoke;
     transition: background-color 0.3s;
+    color: black;
 }
 
 .hero-button button:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: black;
+    color: white;
 }
 
 
