@@ -7,6 +7,17 @@
 	text-align-last: right;
 }
 
+.customer-info {
+	font-size: 12px;
+	font-family: "Times New Roman", Times, serif;
+	place-items: center;
+}
+
+.customer-info p {
+	text-align: justify;
+	text-align-last: right;
+}
+
 
 /* ====================== TASK 3 ====================== */
 
