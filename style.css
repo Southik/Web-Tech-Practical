@@ -45,7 +45,7 @@
 }
 
 .login-form-container input:focus {
-  border-color: #007bff;
+  border-color: rgb(107, 18, 137);;
   outline: none;
 }
 
@@ -55,7 +55,7 @@
   margin-top: 0.5rem;
   border: none;
   border-radius: 10px;
-  background-color: #007bff;
+  background-color:rgb(107, 18, 137);;
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
@@ -64,7 +64,7 @@
 }
 
 .login-form-container input[type="submit"]:hover, .login-form-container button:hover {
-  background-color: #0056b3;
+  background-color: rgb(77, 12, 98);
 }
 
 .login-form-container a {
@@ -103,9 +103,9 @@
 .registration-form-container {
   text-align: center;
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 27px;
   padding: 2.5rem 3rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.2);
   width: 600px;
   margin: 6rem auto; 
 }
@@ -145,7 +145,7 @@
 }
 
 .registration-form-container input:focus {
-  border-color: #007bff;
+  border-color: rgb(107, 18, 137);
   outline: none;
 }
 
@@ -174,10 +174,10 @@
 }
 
 .gender-options input[type="radio"]:checked + .gender-btn {
-  background-color: #007bff;
+  background-color: rgb(107, 18, 137);
   color: #fff;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+  border-color: rgb(107, 18, 137);;
+  box-shadow: 0 0 5px rgb(107, 18, 137);
 }
 
 .gender-options {
@@ -208,7 +208,7 @@
   margin-top: 0.5rem;
   border: none;
   border-radius: 10px;
-  background-color: #007bff;
+  background-color: rgb(107, 18, 137);
   color: #fff;
   font-size: 1rem;
   font-weight: 500;
@@ -232,7 +232,7 @@
 
 .registration-form-container input[type="submit"]:hover,
 .registration-form-container button:hover {
-  background-color: #0056b3;
+  background-color: rgb(81, 16, 102);;
 }
 
 .registration-form-container input[type="reset"]:hover, .registration-form-container button:hover {
@@ -323,7 +323,7 @@ body, html {
 }
 
 .nav-right .login-button:hover {
-    background-color: rgb(107, 18, 137);;
+    background-color: rgb(107, 18, 137);
     color: whitesmoke;
 }
 
