@@ -281,7 +281,7 @@ body, html {
     height: 100%;
     font-family: Futura, sans-serif;
     box-sizing: border-box;
-    background-color: #6595c4;
+    background-color: rgb(16, 33, 72);
 }
 
 
@@ -293,20 +293,20 @@ body, html {
     padding: 20px 40px; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     height: 30px; 
-    background-color: rgb(23, 31, 81);
+    background-color: black;
 }
 
 .nav-left a {
     margin-right: 30px;
     color: whitesmoke;
-    font-weight: bold;
     font-size: 1.2em;
     transition: color 0.3s;
     text-decoration: none;
 }
 
 .nav-left a:hover {
-    text-decoration: underline; 
+    color: rgb(184, 70, 222);
+    font-weight: 1000;
 }
 
 .nav-right .login-button {
@@ -315,14 +315,14 @@ body, html {
     color: whitesmoke;
     font-weight: bold;
     font-size: 1em;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: background-color 0.3s;
     text-decoration: none; 
 }
 
 .nav-right .login-button:hover {
-    background-color: whitesmoke;
-    color: black;
+    background-color: rgb(107, 18, 137);;
+    color: whitesmoke;
 }
 
 section {
@@ -376,7 +376,7 @@ section {
 }
 
 .hero-button button:hover {
-    background-color: black;
+    background-color: rgb(115, 27, 144);
     color: white;
 }
 
@@ -385,7 +385,7 @@ section {
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 40px;
-    color: #000000;
+    color: whitesmoke;
 }
 
 
