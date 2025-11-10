@@ -307,6 +307,8 @@ body, html {
 .nav-left a:hover {
     color: rgb(184, 70, 222);
     font-weight: 1000;
+    transition: color 0.3s;
+    text-decoration: underline;
 }
 
 .nav-right .login-button {
