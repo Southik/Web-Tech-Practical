@@ -15,7 +15,7 @@
             <a href="login.html" class="login-button">Customer Login</a>
         </div>
     </nav>
-	<div class = "customer-info" style="text-align: center;">
+	<div class = "customer-info">
 		<h1> CUSTOMER PROFILE </h1>
 		<table>
 			<tr><th>Firstname:</th><td>Michael</td></tr>
@@ -23,13 +23,14 @@
 			<tr><th>Password:</th><td>Wslknoihoi324DCC</td></tr>
 		</table><br>
 		<p>This User has logged in successfully</p>
-			<div><button type="button">Change Info</button></div><br>
+			<div class="customer-buttons">Change Info</div><br>
 
-		
-			<a href=login.html><button type="button">Go Back</button></a>
-			<a href=logout.html><button type="button">Logout</button></a> 
-			<a href=index.html><button type="button">Unregister</button></a>
-
+			<div>
+				<a href=login.html class="customer-buttons">Go Back</a>
+				<a href=logout.html class="customer-buttons">Logout</a> 
+				<a href=index.html class="customer-buttons">Unregister</a>
+			</div><br><br>
+		<a id="help-link">Need Help?</a>
 	</div>
 </body>
 </html>
