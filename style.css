@@ -96,6 +96,73 @@
   .login-form-container h1 {
     font-size: 1.5rem;
   }
+  
+  
+ <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Store</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="freestyle.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="Shoes/menShoeList.html">Shoes</a>
+            <a href="Clothing/menClothesList.html">Clothing</a>
+        </div>
+        <div class="nav-right">
+            <a href="login.html" class="login-button"> ➔ Customer Login </a>
+        </div>
+    </nav>
+
+
+   <section class="hero">
+	    <div class="slider-wrapper"> 
+			<div class= "slider">
+				<img id="img1" src="img/heroimage.jpg" alt="Store Image">
+				<img id="img2" src="img/medium-shot-happy-woman-carrying-shopping-bags.jpg" alt="Store Image">
+				<img id="img3" src="img/stylish-casual-african-american.jpg" alt="Store Image">
+				<img id="img4" src="img/shopping-packet-sale-sign.jpg" alt="Store Image">
+				<img id="img5" src="img/Tshirts.jpg" alt="Store Image">
+				<img id="img6" src="img/HPimg.jpg" alt="Store Image">
+				
+				<h1 class="hero-title">Where Every Outfit Finds Its <span class="Highlighttext">Perfect Match</span></h1>
+				<a href="about.html" class="hero-button">
+					<button type="button"><h3>About Us</h3></button>
+				</a>
+			</div>
+			<div class="slider-nav">
+				<a href="#img1"></a>
+				<a href="#img2"></a>
+				<a href="#img3"></a>
+				<a href="#img5"></a>
+				<a href="#img6"></a>
+			</div>
+		</div>
+    </section>
+	
+
+    <section class="cards-section">
+        <h2 class="section-title">Highlights</h2>
+        <div class="cards-container">
+            
+            <a href="Clothing/menClothesList.html"><div class="card" style="background-image: url('img/cloCard.jpg');">
+                <div class="card-text">Clothings</div>
+            </div></a>
+            
+            <a  href="Shoes/menShoeList.html"><div class="card" style="background-image: url('img/shoeCard.jpeg');">
+                <div class="card-text">Shoes</div>
+            </div></a>
+        </div>
+    </section>
+
+
+    
+</body>
+</html>
+
 }
 
 /* Registration Form */
@@ -271,163 +338,7 @@
   }
 }
 
-
-/* ====================== TASK 3 ====================== */
-
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: Futura, sans-serif;
-    box-sizing: border-box;
-    background-color: rgb(16, 33, 72);
-}
-
-
-
-.navbar {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 20px 40px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    height: 30px; 
-    background-color: black;
-}
-
-.nav-left a {
-    margin-right: 30px;
-    color: whitesmoke;
-    font-size: 1.2em;
-    transition: color 0.3s;
-    text-decoration: none;
-}
-
-.nav-left a:hover {
-    color: rgb(184, 70, 222);
-    font-weight: 1000;
-    transition: color 0.3s;
-    text-decoration: underline;
-}
-
-.nav-right .login-button {
-    padding: 10px 20px;
-    background-color: black;
-    color: whitesmoke;
-    font-weight: bold;
-    font-size: 1em;
-    border-radius: 20px;
-    transition: background-color 0.3s;
-    text-decoration: none; 
-}
-
-.nav-right .login-button:hover {
-    background-color: rgb(107, 18, 137);
-    color: whitesmoke;
-}
-
-section {
-    width: 100%;
-}
-
-
-.hero {
-    width: 100%;
-    height: 80vh; 
-}
-
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    display: block;
-}
-
-.hero h1 {
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%); 
-    color: white;
-    font-size: 4em;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    font-family: Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
-}
-
-.hero .Highlighttext{
-  font-style: italic;
-}
-
-.hero-button {
-    position: absolute;
-    top: 60%; 
-    left: 13%;
-    transform: translateX(-50%);
-}
-
-.hero-button button {
-    padding: 2px 10px 2px 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    transition: background-color 0.3s;
-    color: black;
-}
-
-.hero-button button:hover {
-    background-color: rgb(115, 27, 144);
-    color: white;
-}
-
-
-.section-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: whitesmoke;
-}
-
-
-.cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px; 
-    flex-wrap: wrap; 
-    padding-bottom: 1000px;
-}
-
-.card {
-    position: relative;
-    width: 700px;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-
-.card-text {
-    position: absolute;
-    top: 90%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 1.9em;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    background-color: rgb(24, 24, 24);
-    border-radius: 30px;
-    padding: 10px 20px;
+.card-text:hover{
+	background-color: violet;
+	opacity:0.2 ;
 }
