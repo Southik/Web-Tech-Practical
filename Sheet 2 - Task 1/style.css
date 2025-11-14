@@ -1,21 +1,319 @@
 /* ====================== TASK 1  ====================== */
 
-#about-paragraph p {
-	font-size: 12px;
-	font-family: "Times New Roman", Times, serif;
-	text-align: justify;
-	text-align-last: right;
-}
-
 .customer-info {
 	font-size: 12px;
 	font-family: "Times New Roman", Times, serif;
-	place-items: center;
+	display: grid;
+    place-items: center;
+
 }
 
 .customer-info p {
-	text-align: justify;
-	text-align-last: right;
+	text-align: right;
+	color: #FFFFFF 
+}
+
+.customer-info table th {
+  background-color: #d3d3d3; /* light gray */
+}
+
+.customer-info .customer-buttons {
+    padding: 10px 20px;
+    background-color: black;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    text-decoration: none; 
+}
+
+.customer-info .customer-buttons:hover {
+    background-color: rgb(107, 18, 137);
+    color: whitesmoke;
+}
+
+.customer-info #help-link {
+  color: #ff6600;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.customer-info #help-link:hover {
+  color: #0051a8;
+  background-color: #f3f3f3;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+/* ====================== TASK 2 ====================== */
+
+/*LOGIN*/
+
+.login-form-container {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  margin: 10rem auto; 
+}
+
+.login-form-container input, .login-form-container button { /*make the input align with the button*/
+  box-sizing: border-box;
+}
+
+.login-form-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+.login-form-container label {
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.login-form-container input[type="text"], .login-form-container input[type="password"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s;
+}
+
+.login-form-container input:focus {
+  border-color: rgb(107, 18, 137);;
+  outline: none;
+}
+
+.login-form-container input[type="submit"], .login-form-container button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color:rgb(107, 18, 137);;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form-container input[type="submit"]:hover, .login-form-container button:hover {
+  background-color: rgb(77, 12, 98);
+}
+
+.login-form-container a {
+  text-decoration: none;
+  display: block;
+  margin-top: 1rem;
+}
+
+.login-form-container a button {
+  background-color: #6c757d;
+}
+
+.login-form-container a button:hover {
+  background-color: #5a6268;
+}
+
+#back-button > button {
+  background-color: transparent;
+  color: #007bff;
+}
+
+
+@media (max-width: 480px) {
+  .login-form-container {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .login-form-container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Registration Form */
+
+.registration-form-container {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 27px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  margin: 6rem auto; 
+}
+
+.registration-form-container input,
+.registration-form-container button {
+  box-sizing: border-box;
+}
+
+.registration-form-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+.registration-form-container label {
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.registration-form-container input[type="text"],
+.registration-form-container input[type="email"],
+.registration-form-container input[type="password"],
+.registration-form-container input[type="date"],
+.registration-form-container input[type="tel"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s;
+}
+
+.registration-form-container input:focus {
+  border-color: rgb(107, 18, 137);
+  outline: none;
+}
+
+
+.gender-options input[type="radio"] {
+  display: none;
+}
+
+.gender-options .gender-btn {
+  flex: 1;
+  margin: 0 0.3rem;
+  padding: 0.7rem 0;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.gender-options .gender-btn:hover {
+  background-color: #e6e6e6;
+}
+
+.gender-options input[type="radio"]:checked + .gender-btn {
+  background-color: rgb(107, 18, 137);
+  color: #fff;
+  border-color: rgb(107, 18, 137);;
+  box-shadow: 0 0 5px rgb(107, 18, 137);
+}
+
+.gender-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+
+
+.registration-form-container input[type="radio"],
+.registration-form-container input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.registration-form-container input[type="checkbox"] + label {
+  display: inline;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: left;
+}
+
+.registration-form-container input[type="submit"],
+.registration-form-container button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(107, 18, 137);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.registration-form-container input[type="reset"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #6c757d;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+
+.registration-form-container input[type="submit"]:hover,
+.registration-form-container button:hover {
+  background-color: rgb(81, 16, 102);;
+}
+
+.registration-form-container input[type="reset"]:hover, .registration-form-container button:hover {
+    background-color: #5a6268;
+}
+
+
+.registration-form-container a button {
+  background-color: transparent;
+  color:#007bff;
+  margin-top: 0.7rem;
+}
+
+.registration-form-container a button:hover {
+  background-color: transparent;
+}
+
+.registration-form-container a {
+  color: #007bff;
+}
+
+
+#back-button > button {
+  background-color: transparent;
+  color: #007bff;
+}
+
+@media (max-width: 480px) {
+  .registration-form-container {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .registration-form-container h1 {
+    font-size: 1.5rem;
+  }
 }
 
 
@@ -26,48 +324,52 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: Futura, sans-serif;
     box-sizing: border-box;
+    background-color: rgb(16, 33, 72);
 }
+
+
 
 .navbar {
     display: flex;
     justify-content: space-between; 
     align-items: center;
     padding: 20px 40px; 
-    background-color:#64696e; 
-    color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     height: 30px; 
+    background-color: black;
 }
 
 .nav-left a {
     margin-right: 30px;
-    color: white;
-    font-weight: bold;
+    color: whitesmoke;
     font-size: 1.2em;
     transition: color 0.3s;
     text-decoration: none;
 }
 
 .nav-left a:hover {
-    color: #ffcc00; 
+    color: rgb(184, 70, 222);
+    font-weight: 1000;
+    transition: color 0.3s;
+    text-decoration: underline;
 }
 
 .nav-right .login-button {
     padding: 10px 20px;
-    background-color: #ffcc00;
-    color: #333;
+    background-color: black;
+    color: whitesmoke;
     font-weight: bold;
     font-size: 1em;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: background-color 0.3s;
-    text-decoration: none;
+    text-decoration: none; 
 }
 
 .nav-right .login-button:hover {
-    background-color: #e6b800;
-    color: white;
+    background-color: rgb(107, 18, 137);
+    color: whitesmoke;
 }
 
 section {
@@ -90,7 +392,7 @@ section {
 .hero h1 {
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%); 
     color: white;
     font-size: 4em;
@@ -98,10 +400,14 @@ section {
     font-family: Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 }
 
+.hero .Highlighttext{
+  font-style: italic;
+}
+
 .hero-button {
     position: absolute;
-    top: 55%; 
-    left: 50%;
+    top: 60%; 
+    left: 13%;
     transform: translateX(-50%);
 }
 
@@ -111,12 +417,14 @@ section {
     cursor: pointer;
     border: none;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: whitesmoke;
     transition: background-color 0.3s;
+    color: black;
 }
 
 .hero-button button:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(115, 27, 144);
+    color: white;
 }
 
 
@@ -124,7 +432,7 @@ section {
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 40px;
-    color: #333;
+    color: whitesmoke;
 }
 
 
@@ -156,12 +464,15 @@ section {
 
 .card-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 90%;
+    left: 80%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 1.5em;
+    font-size: 1.9em;
     font-weight: bold;
     text-align: center;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    background-color: rgb(24, 24, 24);
+    border-radius: 30px;
+    padding: 10px 20px;
 }
