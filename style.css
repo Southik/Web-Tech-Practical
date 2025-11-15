@@ -130,18 +130,18 @@
 }
 
 .login-form-container a button {
-  background-color: #6c757d;
+  background-color: #5a6268;
 }
 
 .login-form-container a button:hover {
   background-color: #5a6268;
 }
-/*
+
 #back-button > button {
   background-color: transparent;
   color: #007bff;
 }
-*/
+
 
 @media (max-width: 480px) {
   .login-form-container {
