@@ -1,6 +1,59 @@
 /* ====================== TASK 1  ====================== */
 
-/*see folder sheet 2 - Task 1*/
+.customer-info {
+	
+	display: grid;
+    place-items: center;
+
+}
+
+.customer-info table td {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.customer-info table td:hover {
+  background-color: #ff6600;
+}
+
+.customer-info p {
+	text-align: right;
+	color: #FFFFFF 
+}
+
+.customer-info table th {
+	color: black;
+	background-color: #d3d3d3; /* light gray */
+}
+
+.customer-info .customer-buttons {
+    padding: 10px 20px;
+    background-color: black;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    text-decoration: none; 
+}
+
+.customer-info .customer-buttons:hover {
+    background-color: rgb(107, 18, 137);
+    color: whitesmoke;
+}
+
+.customer-info #help-link {
+  color: #ff6600;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.customer-info #help-link:hover {
+  color: #0051a8;
+  background-color: #f3f3f3;
+  text-decoration: none;
+  font-weight: normal;
+}
 
 
 /* ====================== TASK 2 ====================== */
@@ -303,11 +356,6 @@ body, html {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     height: 30px; 
     background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
 }
 .nav-right .login-button {
     margin-right: 40px; 
