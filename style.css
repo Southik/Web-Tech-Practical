@@ -26,6 +26,7 @@
   margin-bottom: 1.5rem;
   font-weight: 600;
   font-family: 'Segoe UI', Verdana, sans-serif;
+  color: black;
 }
 
 .login-form-container label {
@@ -123,6 +124,7 @@
   margin-bottom: 1.5rem;
   font-weight: 600;
   font-family: 'Segoe UI', Verdana, sans-serif;
+  color:black;
 }
 
 .registration-form-container label {
