@@ -313,7 +313,7 @@
 }
 
 
-#back-button > button {
+.back-button > button {
   background-color: transparent;
   color: #007bff;
 }
@@ -843,19 +843,6 @@ section {
 }
 
 
-
-
-.back-button { 
-	border-color:rgb (95 141 231);
-	width: 80px;
-	border-style: solid;
-	padding: 2px;
-	height:32px;
-}
-.back-button:hover {
-	background-color: rgb(112 167 225);
-	
-}
 
 /*
 .logout-button {
