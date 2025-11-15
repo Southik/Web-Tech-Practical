@@ -136,12 +136,12 @@
 .login-form-container a button:hover {
   background-color: #5a6268;
 }
-
+/*
 #back-button > button {
   background-color: transparent;
   color: #007bff;
 }
-
+*/
 
 @media (max-width: 480px) {
   .login-form-container {
@@ -845,7 +845,7 @@ section {
 
 
 
-#back-button > button { 
+.back-button { 
 	border-color:rgb (95 141 231);
 	width: 120px;
 	border-style: solid;
@@ -853,7 +853,7 @@ section {
 	width: 120px;
 	height:32px;
 }
-#back-button > button:hover {
+.back-button:hover {
 	background-color: rgb(112 167 225);
 	
 }
