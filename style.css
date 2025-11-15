@@ -797,16 +797,6 @@ section {
 
 
 
-
-
-
-
-
-
-
-
-
-/*
 #back-button > button { 
 	border-color:rgb (95 141 231);
 	width: 120px;
@@ -819,6 +809,8 @@ section {
 	background-color: rgb(112 167 225);
 	
 }
+
+/*
 .logout-button {
 	position: fixed;
 	width: 120px;
@@ -829,11 +821,7 @@ section {
 	color: white;
 	background-color:-webkit-link;
 }
-button {
-    cursor: pointer;
-	border-radius: 32px;
-	border-color: rgb(77, 12, 98);
-}
+
 button:hover{
 	background-color: rgb(77, 12, 98);
 }
@@ -846,7 +834,5 @@ button:hover{
   color: black;
   text-decoration: underline;
 }
-.clothes-men-container{
-	margin-left: 32px;
-}
+
 */
