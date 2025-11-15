@@ -847,10 +847,9 @@ section {
 
 .back-button { 
 	border-color:rgb (95 141 231);
-	width: 120px;
+	width: 80px;
 	border-style: solid;
 	padding: 2px;
-	width: 120px;
 	height:32px;
 }
 .back-button:hover {
