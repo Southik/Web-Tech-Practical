@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,46 +9,50 @@
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <a href="menShoeList.html">Shoes</a>
+            <a href="../Shoes/menShoeList.html">Shoes</a>
             <a href="../Clothing/menClothesList.html">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="login.html" class="login-button">Customer Login</a>
+            <a href="../login.html" class="login-button">Customer Login</a>
         </div>
     </nav>
-	<br><br><br><br>
-	<h1><center>ALL THE FORMAL SHOES FOR MEN</center></h1>
-	<p><i>Elegant and comfortable shoes for business, events, and daily wear.</i></P>
-	<section>
-		
-		
-		<img src="../img/leather shoe.png" alt="Classic Black Leather Shoe" width="200">
-        <div class="product-name">Classic Black Leather Shoe</div>
-        <div class="product-description">
-            Premium handcrafted leather shoes that combine timeless style with modern comfort.
-        </div>
-        <div class="product-price">$89.99</div>
-        <a href="menLeatherShoe007.html">View Details</a>
-	</section>	
-	   <br>
-	<section>
-		<img src="../img/brown leather.png" alt="Classic Brown Leather Shoe" width="200">
-        <div class="product-name">Classic Brown Leather Shoe</div>
-        <div class="product-description">
-            Premium handcrafted leather shoes that combine style and elegance.
-        </div>
-        <div class="product-price">$79.99</div>
-        <a href="menLeatherShoe008.html">View Details</a>
-	</section>
-		<br>
-	<hr>
 
-    <section>
-		<a href="menShoeList.html">
-            <button type="button"><h3>Go Back</h3></button>
+    <h1 class="page-title">ALL THE FORMAL SHOES FOR MEN</h1>
+    <div class="category" id="formal-shoes">
+        <h3 class="category-title">Formal Shoes</h3>
+        <hr>
+        <p class="subtitle-shoe"><i>Elegant and comfortable shoes for business, events, and daily wear.</i></p>
+        <br>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="../img/leather shoe.png" alt="Classic Black Leather Shoe" class="product-image">
+                <div class="product-name">Classic Black Leather Shoe</div>
+                <div class="product-description">
+                    Premium handcrafted leather shoes that combine timeless style with modern comfort.
+                </div>
+                <div class="product-price">€89.99</div>
+                <a href="menLeatherShoe007.html" class="details-button">View Details</a>
+            </div>
+
+            <div class="product-card">
+                <img src="../img/brown leather.png" alt="Classic Brown Leather Shoe" class="product-image">
+                <div class="product-name">Classic Brown Leather Shoe</div>
+                <div class="product-description">
+                    Premium handcrafted leather shoes that combine style and elegance.
+                </div>
+                <div class="product-price">€79.99</div>
+                <a href="menLeatherShoe008.html" class="details-button">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation-buttons">
+        <a href="../Shoes/menShoeList.html">
+            <button type="button" class="nav-button">Go Back</button>
         </a>
-        <a href="../shoppingCartShoe.html"><button type="button"><h3>Shopping Cart</h3></button></a>
-
-    </section>
+        <a href="../shoppingCartShoe.html">
+            <button type="button" class="nav-button">Shopping Cart</button>
+        </a>
+    </div>
 </body>
 </html>

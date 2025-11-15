@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,33 +9,73 @@
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <a href="Shoes/menShoeList.html">Shoes</a>
-            <a href="Clothing/menClothesList.html">Clothing</a>
+            <a href="../Shoes/menShoeList.html">Shoes</a>
+            <a href="../Clothing/menClothesList.html">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="login.html" class="login-button">Customer Login</a>
+            <a href="../login.html" class="login-button">Customer Login</a>
         </div>
     </nav>
-	<br><br><br><br>
-	<h1>Casual Blue Shirt</h1>
-	<section>		
-		<img src="../img/menshirt2.png" alt="Casual Blue Shirt" width="200">
-        <div class="product-name">Casual Blue Shirt</div>
-        <div class="product-description">
-            Effortless style you can wear anywhere.
-        </div>
-        <div class="product-price">$39.99</div>
-        <a href="menShirt2.html">
-			<button type="button"><h3>Add to Shopping Card</h3></button>
-		</a>
-	</section>	
-	<hr>
 
-    <section>
-		<a href="menClothesList.html">
-            <button type="button"><h3>Go Back</h3></button>
-        </a>
-        <a href="../shoppingCartClothing.html"><button type="button"><h3>Shopping Cart</h3></button></a>
+    <section class="product-detail">
+        <div class="product-layout full-width-layout">
+            <div class="product-image-container full-image">
+                <img src="../img/menshirt2.png" alt="Casual Blue Shirt" class="product-image">
+            </div>
+
+            <div class="product-info">
+                <h1 class="page-title">Casual Blue Shirt</h1>
+                <p class="product-subtitle">
+                    Effortless style you can wear anywhere.
+                </p>
+                <div class="product-price">€39.99</div>
+
+                <div class="size-selector">
+                    <label>Select Size:</label>
+                    <div class="size-options">
+                        <label>
+                            <input type="radio" name="size" value="S">
+                            <span class="size-button">S</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="M">
+                            <span class="size-button">M</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="L">
+                            <span class="size-button">L</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="XL">
+                            <span class="size-button">XL</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="XXL">
+                            <span class="size-button">XXL</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="product-actions">
+                    <a href="../shoppingCartClothing.html">
+                        <button type="button" class="nav-button">Add to Shopping Cart</button>
+                    </a>
+                </div>
+
+                <p class="pickup-note">Free pickup available in store.</p>
+            </div>
+        </div>
     </section>
+
+    <hr>
+
+    <div class="navigation-buttons">
+        <a href="../Clothing/menClothesList.html">
+            <button type="button" class="nav-button">Go Back</button>
+        </a>
+        <a href="../shoppingCartClothing.html">
+            <button type="button" class="nav-button">Shopping Cart</button>
+        </a>
+    </div>
 </body>
 </html>

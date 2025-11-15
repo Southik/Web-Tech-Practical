@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,35 +9,77 @@
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <a href="Shoes/menShoeList.html">Shoes</a>
-            <a href="Clothing/menClothesList.html">Clothing</a>
+            <a href="../Shoes/menShoeList.html">Shoes</a>
+            <a href="../Clothing/menClothesList.html">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="login.html" class="login-button">Customer Login</a>
+            <a href="../login.html" class="login-button">Customer Login</a>
         </div>
     </nav>
-	<br><br><br><br>
-	<h1>Ice White Running Shoes</h1>
-	<section>
-		<img src="../img/msportshoe1.png" alt="Ice White Running Shoes" width="200">
-        <div class="product-name">Ice White Running Shoes</div>
-        <div class="product-description">
-            Designed for all-day comfort and performance, perfect for training or casual wear.
+
+    <section class="product-detail">
+        <div class="product-layout full-width-layout">
+            <div class="product-image-container full-image">
+                <img src="../img/msportshoe1.png" alt="Ice White Running Shoes" class="product-image">
+            </div>
+
+            <div class="product-info">
+                <h1 class="page-title">Ice White Running Shoes</h1>
+                <p class="product-subtitle">
+                    Designed for all-day comfort and performance, perfect for training or casual wear.
+                </p>
+                <div class="product-price">€59.99</div>
+
+                <div class="size-selector">
+                    <label>Select Size:</label>
+                    <div class="size-options">
+                        <label>
+                            <input type="radio" name="size" value="EU 40">
+                            <span class="size-button">EU 40</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="EU 41">
+                            <span class="size-button">EU 41</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="EU 42">
+                            <span class="size-button">EU 42</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="EU 43">
+                            <span class="size-button">EU 43</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="EU 44">
+                            <span class="size-button">EU 44</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="EU 45">
+                            <span class="size-button">EU 45</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="product-actions">
+                    <a href="../shoppingCartShoe.html">
+                        <button type="button" class="nav-button">Add to Shopping Cart</button>
+                    </a>
+                </div>
+
+                <p class="pickup-note">Free pickup available in store.</p>
+            </div>
         </div>
-        <div class="product-price">$59.99</div>
-        <a href="menRunningShoe1.html">
-			<button type="button"><h3>Add to Shopping Card</h3></button>
-		</a>
-	</section>	<br>
-	<hr>
-
-    <section>
-		<a href="menShoeList.html">
-            <button type="button"><h3>Go Back</h3></button>
-        </a>
-        <a href="../shoppingCartShoe.html"><button type="button"><h3>Shopping Cart</h3></button></a>
-
-
     </section>
+
+    <hr>
+
+    <div class="navigation-buttons">
+        <a href="../Shoes/menShoeList.html">
+            <button type="button" class="nav-button">Go Back</button>
+        </a>
+        <a href="../shoppingCartShoe.html">
+            <button type="button" class="nav-button">Shopping Cart</button>
+        </a>
+    </div>
 </body>
 </html>
