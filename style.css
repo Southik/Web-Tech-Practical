@@ -870,3 +870,188 @@ button:hover{
 }
 
 */
+
+/* ====================== LIGHT MODE (FULL SITE) ====================== */
+
+body.light-mode {
+    background-color: rgb(223, 219, 219);
+    color: black;
+}
+
+body.light-mode html {
+    background-color: rgb(223, 219, 219);
+}
+
+body.light-mode .navbar {
+    background-color: rgb(16, 33, 72);
+    color: whitesmoke;
+}
+
+body.light-mode .nav-left a {
+    color: white;
+}
+
+body.light-mode .nav-left a:hover {
+    color: rgb(107, 18, 137);
+}
+
+body.light-mode .nav-right .login-button {
+    background-color: rgb(16, 33, 72);
+    color: white;
+}
+
+body.light-mode section,
+body.light-mode .cards-section,
+body.light-mode .category,
+body.light-mode .navigation-buttons {
+    background-color: rgb(223, 219, 219);
+}
+
+body.light-mode .section-title,
+body.light-mode .page-title,
+body.light-mode .category-title a {
+    color: black !important;
+}
+
+body.light-mode .hero-title,
+body.light-mode .hero h1 {
+    color: white;
+}
+
+body.light-mode button,
+body.light-mode .login-button,
+body.light-mode .details-button,
+body.light-mode .nav-button,
+body.light-mode input[type="submit"],
+body.light-mode input[type="reset"] {
+    background-color: white;
+    color: black;
+}
+
+body.light-mode button:hover,
+body.light-mode .login-button:hover,
+body.light-mode .details-button:hover,
+body.light-mode .nav-button:hover,
+body.light-mode input[type="submit"]:hover,
+body.light-mode input[type="reset"]:hover {
+    background-color: rgb(107, 18, 137);
+    color: white;
+}
+
+body.light-mode .cards-container {
+    background-color: rgb(223, 219, 219);
+}
+
+body.light-mode .card {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+body.light-mode .card-text {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+body.light-mode .product-card {
+    background-color: #fafafa;
+    color: black;
+}
+
+body.light-mode .product-name {
+    color: black;
+}
+
+body.light-mode .product-description {
+    color: #444;
+}
+
+body.light-mode .product-price {
+    color: #008800;
+}
+
+body.light-mode .product-detail {
+    background-color: rgb(223, 219, 219);
+}
+
+body.light-mode .product-detail .product-name,
+body.light-mode .product-detail .product-subtitle,
+body.light-mode .product-detail .page-title {
+    color: black;
+}
+
+body.light-mode .product-detail .product-description {
+    color: #444;
+}
+
+body.light-mode .size-button {
+    background-color: white;
+    color: black;
+}
+
+body.light-mode .size-options input:checked + .size-button {
+    background-color: black;
+    color: white;
+}
+
+body.light-mode table,
+body.light-mode td,
+body.light-mode th {
+    color: black;
+}
+
+body.light-mode th {
+    background-color: #e0e0e0;
+}
+
+body.light-mode td:hover {
+    background-color: rgb(107, 18, 137);
+    color: white;
+}
+
+body.light-mode a {
+    color: rgb(16, 33, 72);
+}
+
+body.light-mode a:hover {
+    color: rgb(107, 18, 137);
+}
+
+body.light-mode .customer-info p {
+    color: black;
+}
+
+body.light-mode .login-form-container,
+body.light-mode .registration-form-container {
+    background-color: white;
+    color: black;
+}
+
+body.light-mode .login-form-container h1,
+body.light-mode .registration-form-container h1 {
+    color: black;
+}
+
+body.light-mode .login-form-container label,
+body.light-mode .registration-form-container label {
+    color: #222;
+}
+
+body.light-mode .login-form-container input,
+body.light-mode .registration-form-container input {
+    background-color: white;
+    border-color: #888;
+    color: black;
+}
+
+body.light-mode .gender-options .gender-btn {
+    background-color: #eaeaea;
+    color: black;
+}
+
+body.light-mode .gender-options input[type="radio"]:checked + .gender-btn {
+    background-color: rgb(107, 18, 137);
+    color: white;
+}
+
+body.light-mode .subtitle-shoe {
+    color: black;
+}
