@@ -63,11 +63,24 @@
                         <button type="button" class="nav-button">Add to Shopping Cart</button>
                     </a>
                 </div>
-
+				
+				<button type="button" class="nav-button" onclick="addToCollection()">Add to Collection List</button>
+				
+				<div class = "quantity-selection">
+					<input type="number" min="1" value="1" class="quantity-input"/>
+					
+				  
+				</div>
+				
                 <p class="pickup-note">Free pickup available in store.</p>
             </div>
         </div>
     </section>
+	
+	<h2>Collection List</h2>
+	<ul id="collection-list"></ul>
+	
+	<button type="button" onclick="removeOneFromList()" class="delete-collection-item">Remove Item</button>
 
     <hr>
 
@@ -79,5 +92,7 @@
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>
+	
+<script src="../collection.js"></script>
 </body>
 </html>

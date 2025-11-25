@@ -842,7 +842,45 @@ section {
     border-radius: 10px;
 }
 
+.product-detail .quantity-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
 
+.product-detail .quantity-input {
+  width: 3em;
+  text-align: center;
+  background-color: black;
+  color : white;
+}
+
+#collection-list {
+  margin-top: 1em;
+  list-style: none;
+  padding: 0;
+}
+.collection-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9;
+  color: #222;
+  margin: 0.5em 0;
+  padding: 0.7em;
+  border-radius: 6px;
+}
+
+.delete-collection-item {
+  background: #c00;
+  color: #fff;
+  border: none;
+  padding: 0.2em 0.6em;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 1em;
+}
+	
 
 /*
 .logout-button {
