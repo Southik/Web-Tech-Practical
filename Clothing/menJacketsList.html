@@ -34,6 +34,11 @@
                 </div>
                 <div class="product-price">€120.00</div>
                 <a href="menJacket1.html" class="details-button">View Details</a>
+				
+				<form>
+					<input type="number" min="1" value="1" class="quantity-input"/>
+					<button type="button" class="collection-button" onclick="addToCollectionList(this)">Add to Collection List</button>
+				</form>
             </div>
 
             <div class="product-card">
@@ -44,9 +49,20 @@
                 </div>
                 <div class="product-price">€109.99</div>
                 <a href="menJacket2.html" class="details-button">View Details</a>
+				
+				<form>
+					<input type="number" min="1" value="1" class="quantity-input"/>
+					<button type="button" class="collection-button" onclick="addToCollectionList(this)">Add to Collection List</button>
+				</form>
             </div>
         </div>
     </div>
+	
+	<h2>Collection List</h2>
+	<ul id="collection-list"></ul>
+	
+	<button type="button" onclick="removeOneFromList()" class="delete-collection-item">Remove Item</button>
+
 
     <div class="navigation-buttons">
         <a href="../Clothing/menClothesList.html">
@@ -56,5 +72,7 @@
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>
+
+<script src="../collection.js"></script>
 </body>
 </html>
