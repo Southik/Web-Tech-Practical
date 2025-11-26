@@ -40,7 +40,7 @@
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionList(this)">Add to Collection List</button>
+					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
 				</form> 
             </div>
 
@@ -55,7 +55,7 @@
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionList(this)">Add to Collection List</button>
+					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
 				</form>
             </div>
         </div>
@@ -79,7 +79,7 @@
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionList(this)">Add to Collection List</button>
+					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
 				</form>
             </div>
 
@@ -94,17 +94,17 @@
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionList(this)">Add to Collection List</button>
+					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
 				</form>
             </div>
         </div>
     </div>
 	
+	<div class="collection-list-container">
+		<h2 style="text-align: center">Collection List</h2>
+		<ul id="collection-list"></ul>
+	</div>
 	
-	<h2>Collection List</h2>
-	<ul id="collection-list"></ul>
-	
-	<button type="button" onclick="removeOneFromList()" class="delete-collection-item">Remove Item</button>
 
     <!-- Navigation Buttons -->
     <div class="navigation-buttons">

@@ -701,7 +701,7 @@ section {
     display: inline-block;
     margin-bottom: 10px;
     padding: 4px 8px;
-    background-color: black;
+    background-color: rgb(71, 98, 158);
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
@@ -739,7 +739,7 @@ section {
 .quantity-input {
 	width: 3em;
 	text-align: center;
-	background-color: black;
+	background-color: rgb(71, 98, 158);
 	color : white;
 }
 
@@ -866,34 +866,42 @@ section {
     border-radius: 10px;
 }
 
-.product-detail .quantity-section {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1em;
-}
 
-.product-detail .quantity-input {
-  width: 3em;
-  text-align: center;
-  background-color: black;
-  color : white;
-}
 
 #collection-list {
-  margin-top: 1em;
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: block;
+  text-align: center;
 }
-.collection-item {
+
+#collection-list li {
+  background: #fafafa;
+  color: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1em 1.5em;
+  margin: 0.75em auto;
+  font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f9f9f9;
-  color: #222;
-  margin: 0.5em 0;
-  padding: 0.7em;
-  border-radius: 6px;
+  width: 320px;
+  max-width: 90%;
+
 }
+
+.collection-list-container {
+  background: rgb(71, 98, 158);
+  border: 1px solid rgb(145, 167, 217);
+  border-radius: 14px;
+  box-shadow: 0 4px 32px rgba(107,18,137, 0.10);
+  padding: 2em 1em;
+  max-width: 420px;
+  margin: 2em auto;
+}
+
 
 .delete-collection-item {
   background: #c00;
