@@ -697,6 +697,22 @@ section {
     color:white;
 }
 
+.collection-button {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 8px;
+    background-color: black;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.8em;
+}
+
+.collection-button:hover {
+    background-color: rgb(107, 18, 137);
+    color:white;
+}
+
 .navigation-buttons {
     text-align: center;
     margin: 40px 0;
@@ -719,6 +735,14 @@ section {
     color: rgb(107, 18, 137);
     font-weight: bold;
 }
+
+.quantity-input {
+	width: 3em;
+	text-align: center;
+	background-color: black;
+	color : white;
+}
+
 
 
 

@@ -9,6 +9,8 @@ function addToCdollection() {
   list.appendChild(entry);
 }
 
+//singular pages
+
 function addToCollection() {
   const title = document.querySelector(".page-title").textContent;
   const quantity = Number(document.querySelector(".quantity-input").value);
@@ -35,6 +37,38 @@ function addToCollection() {
     list.appendChild(entry);
   }
 }
+
+// For the clothes/shoes lists 
+
+function addToCollectionList(button) {
+  const card = button.closest('.product-card');
+  const title = card.querySelector('.product-name').textContent;
+  const quantity = Number(card.querySelector('.quantity-input').value);
+  const list = document.getElementById("collection-list");
+  const items = list.getElementsByTagName("li");
+  let found = false;
+
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].dataset.title === title) {
+      let prevQty = Number(items[i].dataset.quantity);
+      let newQty = prevQty + quantity;
+      items[i].dataset.quantity = newQty;
+      items[i].textContent = `${title} | Qty: ${newQty}`;
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    const entry = document.createElement("li");
+    entry.dataset.title = title;
+    entry.dataset.quantity = quantity;
+    entry.textContent = `${title} | Qty: ${quantity}`;
+    list.appendChild(entry);
+  }
+}
+
+//remove one element from the collection list
 
 function removeOneFromList() {
   const list = document.getElementById("collection-list");
