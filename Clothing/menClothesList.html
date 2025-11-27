@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Men's Clothing List</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
-
     <nav class="navbar">
         <div class="nav-left">
             <a href="../Shoes/menShoeList.html">Shoes</a>
             <a href="menClothesList.html">Clothing</a>
         </div>
+
         <div class="nav-right">
             <a href="../login.html" class="login-button">Customer Login</a>
         </div>
-        <button id="mode-toggle">Toggle Light Mode</button>
-        <script src="../lightMode.js" defer></script>
+
+        <button id="mode-toggle" aria-pressed="false">Toggle Light Mode</button>
     </nav>
 
     <h1 class="page-title">ALL THE CLOTHES FOR MEN</h1>
@@ -25,38 +26,38 @@
     <!-- Jackets -->
     <div class="category" id="jackets">
         <h3 class="category-title"><a href="menJacketsList.html">Jackets</a></h3>
-        <hr>
+        <hr />
         <p class="subtitle-shoe"><i>Stylish and versatile jackets made for every season.</i></p>
-        <br>
+        <br />
         <div class="product-grid">
             <div class="product-card">
-                <img src="../img/menJacket1.png" alt="Stylish Black Leather Jacket" class="product-image">
+                <img src="../img/menJacket1.png" alt="Stylish Black Leather Jacket" class="product-image" />
                 <div class="product-name">Stylish Black Leather Jacket</div>
                 <div class="product-description">
                     Premium handcrafted leather, a classic design reimagined for everyday wear and special occasions.
                 </div>
                 <div class="product-price">€120.00</div>
                 <a href="menJacket1.html" class="details-button">View Details</a>
-				
-				<form>
-					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-				</form> 
+
+                <form>
+                    <input type="number" min="1" value="1" class="quantity-input" />
+                    <button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
+                </form>
             </div>
 
             <div class="product-card">
-                <img src="../img/menJacket2.png" alt="Casual Blue Denim Jacket" class="product-image">
+                <img src="../img/menJacket2.png" alt="Casual Blue Denim Jacket" class="product-image" />
                 <div class="product-name">Casual Blue Denim Jacket</div>
                 <div class="product-description">
                     Highest quality Denim Jacket - Perfect blend of comfort, style, and practicality.
                 </div>
                 <div class="product-price">€109.99</div>
                 <a href="menJacket2.html" class="details-button">View Details</a>
-				
-				<form>
-					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-				</form>
+
+                <form>
+                    <input type="number" min="1" value="1" class="quantity-input" />
+                    <button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
+                </form>
             </div>
         </div>
     </div>
@@ -64,47 +65,46 @@
     <!-- Shirts -->
     <div class="category" id="shirts">
         <h3 class="category-title"><a href="menShirtList.html">Shirts</a></h3>
-        <hr>
+        <hr />
         <p class="subtitle-shoe"><i>Casual or formal — a perfect shirt for every mood.</i></p>
-        <br>
+        <br />
         <div class="product-grid">
             <div class="product-card">
-                <img src="../img/menshirt1.png" alt="Classic White Shirt" class="product-image">
+                <img src="../img/menshirt1.png" alt="Classic White Shirt" class="product-image" />
                 <div class="product-name">Classic White Shirt</div>
                 <div class="product-description">
                     Timeless design and fabric that fit every wardrobe.
                 </div>
                 <div class="product-price">€49.99</div>
                 <a href="menShirt1.html" class="details-button">View Details</a>
-				
-				<form>
-					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-				</form>
+
+                <form>
+                    <input type="number" min="1" value="1" class="quantity-input" />
+                    <button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
+                </form>
             </div>
 
             <div class="product-card">
-                <img src="../img/menshirt2.png" alt="Casual Blue Shirt" class="product-image">
+                <img src="../img/menshirt2.png" alt="Casual Blue Shirt" class="product-image" />
                 <div class="product-name">Casual Blue Shirt</div>
                 <div class="product-description">
                     Effortless style you can wear anywhere.
                 </div>
                 <div class="product-price">€39.99</div>
                 <a href="menShirt2.html" class="details-button">View Details</a>
-				
-				<form>
-					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-				</form>
+
+                <form>
+                    <input type="number" min="1" value="1" class="quantity-input" />
+                    <button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
+                </form>
             </div>
         </div>
     </div>
-	
-	<div class="collection-list-container">
-		<h2 style="text-align: center">Collection List</h2>
-		<ul id="collection-list"></ul>
-	</div>
-	
+
+    <div class="collection-list-container">
+        <h2 style="text-align: center">Collection List</h2>
+        <ul id="collection-list"></ul>
+    </div>
 
     <!-- Navigation Buttons -->
     <div class="navigation-buttons">
@@ -115,6 +115,9 @@
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>
-<script src="../collection.js"></script>
+
+    <!-- Scripts -->
+    <script src="../collection.js"></script>
+    <script src="../lightMode.js" defer></script>
 </body>
 </html>

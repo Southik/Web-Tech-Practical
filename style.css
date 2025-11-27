@@ -940,188 +940,221 @@ button:hover{
 }
 
 */
+/* ====================== FULL LIGHT MODE ====================== */
 
-/* ====================== LIGHT MODE (FULL SITE) ====================== */
-
-body.light-mode {
-    background-color: rgb(223, 219, 219);
-    color: black;
-}
-
-body.light-mode html {
-    background-color: rgb(223, 219, 219);
-}
-
-body.light-mode .navbar {
-    background-color: rgb(16, 33, 72);
-    color: whitesmoke;
-}
-
-body.light-mode .nav-left a {
-    color: white;
-}
-
-body.light-mode .nav-left a:hover {
-    color: rgb(107, 18, 137);
-}
-
-body.light-mode .nav-right .login-button {
-    background-color: rgb(16, 33, 72);
-    color: white;
-}
-
-body.light-mode section,
-body.light-mode .cards-section,
-body.light-mode .category,
-body.light-mode .navigation-buttons {
-    background-color: rgb(223, 219, 219);
-}
-
-body.light-mode .section-title,
-body.light-mode .page-title,
-body.light-mode .category-title a {
+/* Base: ensure light-mode applies whether class is on html or body */
+html.light-mode,
+body.light-mode,
+.light-mode {
+    background-color: white !important;
     color: black !important;
 }
 
-body.light-mode .hero-title,
-body.light-mode .hero h1 {
-    color: white;
+/* Navbar */
+.light-mode .navbar {
+    background-color: rgb(16, 33, 72) !important;
+    color: whitesmoke !important;
 }
 
-body.light-mode button,
-body.light-mode .login-button,
-body.light-mode .details-button,
-body.light-mode .nav-button,
-body.light-mode input[type="submit"],
-body.light-mode input[type="reset"] {
-    background-color: white;
-    color: black;
+.light-mode .nav-left a {
+    color: white !important;
 }
 
-body.light-mode button:hover,
-body.light-mode .login-button:hover,
-body.light-mode .details-button:hover,
-body.light-mode .nav-button:hover,
-body.light-mode input[type="submit"]:hover,
-body.light-mode input[type="reset"]:hover {
-    background-color: rgb(107, 18, 137);
-    color: white;
+.light-mode .nav-left a:hover {
+    color: rgb(107, 18, 137) !important;
 }
 
-body.light-mode .cards-container {
-    background-color: rgb(223, 219, 219);
+.light-mode .nav-right .login-button {
+    background-color: rgb(16, 33, 72) !important;
+    color: white !important;
 }
 
-body.light-mode .card {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+/* Ensure ALL layout wrappers go white */
+.light-mode main,
+.light-mode section,
+.light-mode .wrapper,
+.light-mode .content,
+.light-mode .container,
+.light-mode .category,
+.light-mode .product-grid,
+.light-mode .cards-section,
+.light-mode .cards-container,
+.light-mode .collection-list-container,
+.light-mode .navigation-buttons,
+.light-mode .category-title,
+.light-mode .page-title {
+    background-color: white !important;
+    color: black !important;
 }
 
-body.light-mode .card-text {
-    background-color: #f2f2f2;
-    color: black;
+/* Text colors */
+.light-mode .section-title,
+.light-mode .page-title,
+.light-mode .category-title,
+.light-mode .category-title a,
+.light-mode .subtitle-shoe {
+    color: black !important;
 }
 
-body.light-mode .product-card {
-    background-color: #fafafa;
-    color: black;
+/* Hero text: force white as requested */
+.light-mode .hero-title,
+.light-mode .hero h1 {
+    color: white !important;
 }
 
-body.light-mode .product-name {
-    color: black;
+/* Buttons: ensure a solid black border for all buttons in light mode */
+.light-mode button,
+.light-mode .login-button,
+.light-mode .details-button,
+.light-mode .nav-button,
+.light-mode input[type="submit"],
+.light-mode input[type="reset"],
+.light-mode .collection-button {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+    box-shadow: none !important;
 }
 
-body.light-mode .product-description {
-    color: #444;
+/* Hover state: keep hover background but preserve visible border */
+.light-mode button:hover,
+.light-mode .login-button:hover,
+.light-mode .details-button:hover,
+.light-mode .nav-button:hover,
+.light-mode input[type="submit"]:hover,
+.light-mode input[type="reset"]:hover,
+.light-mode .collection-button:hover {
+    background-color: rgb(107, 18, 137) !important;
+    color: white !important;
+    border: 1px solid black !important;
 }
 
-body.light-mode .product-price {
-    color: #008800;
+/* Product cards */
+.light-mode .product-card {
+    background-color: #fafafa !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
 }
 
-body.light-mode .product-detail {
-    background-color: rgb(223, 219, 219);
+.light-mode .product-name {
+    color: black !important;
 }
 
-body.light-mode .product-detail .product-name,
-body.light-mode .product-detail .product-subtitle,
-body.light-mode .product-detail .page-title {
-    color: black;
+.light-mode .product-description {
+    color: #444 !important;
 }
 
-body.light-mode .product-detail .product-description {
-    color: #444;
+.light-mode .product-price {
+    color: #008800 !important;
 }
 
-body.light-mode .size-button {
-    background-color: white;
-    color: black;
+/* Product detail page */
+.light-mode .product-detail {
+    background-color: white !important;
 }
 
-body.light-mode .size-options input:checked + .size-button {
-    background-color: black;
-    color: white;
+.light-mode .product-detail .product-name,
+.light-mode .product-detail .product-subtitle,
+.light-mode .product-detail .page-title {
+    color: black !important;
 }
 
-body.light-mode table,
-body.light-mode td,
-body.light-mode th {
-    color: black;
+.light-mode .product-detail .product-description {
+    color: #444 !important;
 }
 
-body.light-mode th {
-    background-color: #e0e0e0;
+/* Size buttons */
+.light-mode .size-button {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
 }
 
-body.light-mode td:hover {
-    background-color: rgb(107, 18, 137);
-    color: white;
+.light-mode .size-options input:checked + .size-button {
+    background-color: black !important;
+    color: white !important;
+    border: 1px solid black !important;
 }
 
-body.light-mode a {
-    color: rgb(16, 33, 72);
+/* Tables */
+.light-mode table,
+.light-mode td,
+.light-mode th {
+    background-color: white !important;
+    color: black !important;
 }
 
-body.light-mode a:hover {
-    color: rgb(107, 18, 137);
+.light-mode th {
+    background-color: #e0e0e0 !important;
 }
 
-body.light-mode .customer-info p {
-    color: black;
+.light-mode td:hover {
+    background-color: rgb(107, 18, 137) !important;
+    color: white !important;
 }
 
-body.light-mode .login-form-container,
-body.light-mode .registration-form-container {
-    background-color: white;
-    color: black;
+/* Links */
+.light-mode a {
+    color: rgb(162, 170, 189) !important;
 }
 
-body.light-mode .login-form-container h1,
-body.light-mode .registration-form-container h1 {
-    color: black;
+.light-mode a:hover {
+    color: rgb(107, 18, 137) !important;
 }
 
-body.light-mode .login-form-container label,
-body.light-mode .registration-form-container label {
-    color: #222;
+/* Forms */
+.light-mode .login-form-container,
+.light-mode .registration-form-container {
+    background-color: white !important;
+    color: black !important;
 }
 
-body.light-mode .login-form-container input,
-body.light-mode .registration-form-container input {
-    background-color: white;
-    border-color: #888;
-    color: black;
+.light-mode .login-form-container h1,
+.light-mode .registration-form-container h1 {
+    color: black !important;
 }
 
-body.light-mode .gender-options .gender-btn {
-    background-color: #eaeaea;
-    color: black;
+.light-mode .login-form-container label,
+.light-mode .registration-form-container label {
+    color: #222 !important;
 }
 
-body.light-mode .gender-options input[type="radio"]:checked + .gender-btn {
-    background-color: rgb(107, 18, 137);
-    color: white;
+.light-mode .login-form-container input,
+.light-mode .registration-form-container input {
+    background-color: white !important;
+    border-color: #888 !important;
+    color: black !important;
+    border: 1px solid #888 !important;
 }
 
-body.light-mode .subtitle-shoe {
-    color: black;
+/* Gender buttons */
+.light-mode .gender-options .gender-btn {
+    background-color: #eaeaea !important;
+    color: black !important;
+    border: 1px solid #bbb !important;
+}
+
+.light-mode .gender-options input[type="radio"]:checked + .gender-btn {
+    background-color: rgb(107, 18, 137) !important;
+    color: white !important;
+    border: 1px solid black !important;
+}
+
+/* Utility: ensure inputs and selects have visible borders in light mode */
+.light-mode input,
+.light-mode textarea,
+.light-mode select {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #888 !important;
+}
+
+/* Accessibility: focus outlines */
+.light-mode button:focus,
+.light-mode a:focus,
+.light-mode input:focus,
+.light-mode select:focus,
+.light-mode textarea:focus {
+    outline: 3px solid rgba(107, 18, 137, 0.25) !important;
+    outline-offset: 2px !important;
 }
