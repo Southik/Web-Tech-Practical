@@ -1158,3 +1158,14 @@ body.light-mode,
     outline: 3px solid rgba(107, 18, 137, 0.25) !important;
     outline-offset: 2px !important;
 }
+/* ====================== Registration Validation ====================== */
+.valid {
+    border: 2px solid green;
+    background-color: #e6ffe6;
+}
+
+.invalid {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
