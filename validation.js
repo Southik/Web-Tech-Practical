@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const confirmPassword = document.getElementById("confirm-password");
     const address = document.getElementById("address");
 
-    // helper functions to mark fields
     function setValid(field) {
         field.classList.remove("invalid");
         field.classList.add("valid");
@@ -94,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // validate all fields on submit
     form.addEventListener("submit", function (e) {
         const validFirstname = validateName(firstname);
         const validLastname = validateName(lastname);

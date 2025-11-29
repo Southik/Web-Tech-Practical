@@ -941,35 +941,31 @@ button:hover{
 
 */
 /* ====================== FULL LIGHT MODE ====================== */
-
-/* Base: ensure light-mode applies whether class is on html or body */
 html.light-mode,
 body.light-mode,
 .light-mode {
-    background-color: white !important;
-    color: black !important;
+    background-color: white;
+    color: black;
 }
 
-/* Navbar */
 .light-mode .navbar {
-    background-color: rgb(16, 33, 72) !important;
-    color: whitesmoke !important;
+    background-color: rgb(16, 33, 72);
+    color: whitesmoke;
 }
 
 .light-mode .nav-left a {
-    color: white !important;
+    color: white;
 }
 
 .light-mode .nav-left a:hover {
-    color: rgb(107, 18, 137) !important;
+    color: rgb(107, 18, 137);
 }
 
 .light-mode .nav-right .login-button {
-    background-color: rgb(16, 33, 72) !important;
-    color: white !important;
+    background-color: rgb(16, 33, 72);
+    color: white;
 }
 
-/* Ensure ALL layout wrappers go white */
 .light-mode main,
 .light-mode section,
 .light-mode .wrapper,
@@ -983,8 +979,8 @@ body.light-mode,
 .light-mode .navigation-buttons,
 .light-mode .category-title,
 .light-mode .page-title {
-    background-color: white !important;
-    color: black !important;
+    background-color: white;
+    color: black;
 }
 
 /* Text colors */
@@ -993,16 +989,14 @@ body.light-mode,
 .light-mode .category-title,
 .light-mode .category-title a,
 .light-mode .subtitle-shoe {
-    color: black !important;
+    color: black;
 }
 
-/* Hero text: force white as requested */
 .light-mode .hero-title,
 .light-mode .hero h1 {
-    color: white !important;
+    color: white;
 }
 
-/* Buttons: ensure a solid black border for all buttons in light mode */
 .light-mode button,
 .light-mode .login-button,
 .light-mode .details-button,
@@ -1010,13 +1004,12 @@ body.light-mode,
 .light-mode input[type="submit"],
 .light-mode input[type="reset"],
 .light-mode .collection-button {
-    background-color: white !important;
-    color: black !important;
-    border: 1px solid black !important;
-    box-shadow: none !important;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    box-shadow: none;
 }
 
-/* Hover state: keep hover background but preserve visible border */
 .light-mode button:hover,
 .light-mode .login-button:hover,
 .light-mode .details-button:hover,
@@ -1024,141 +1017,139 @@ body.light-mode,
 .light-mode input[type="submit"]:hover,
 .light-mode input[type="reset"]:hover,
 .light-mode .collection-button:hover {
-    background-color: rgb(107, 18, 137) !important;
-    color: white !important;
-    border: 1px solid black !important;
+    background-color: rgb(107, 18, 137);
+    color: white;
+    border: 1px solid black;
 }
 
 /* Product cards */
 .light-mode .product-card {
-    background-color: #fafafa !important;
-    color: black !important;
-    border: 1px solid #ccc !important;
+    background-color: #fafafa;
+    color: black;
+    border: 1px solid #ccc;
 }
 
 .light-mode .product-name {
-    color: black !important;
+    color: black;
 }
 
 .light-mode .product-description {
-    color: #444 !important;
+    color: #444;
 }
 
 .light-mode .product-price {
-    color: #008800 !important;
+    color: #008800;
 }
 
 /* Product detail page */
 .light-mode .product-detail {
-    background-color: white !important;
+    background-color: white;
 }
 
 .light-mode .product-detail .product-name,
 .light-mode .product-detail .product-subtitle,
 .light-mode .product-detail .page-title {
-    color: black !important;
+    color: black;
 }
 
 .light-mode .product-detail .product-description {
-    color: #444 !important;
+    color: #444;
 }
 
 /* Size buttons */
 .light-mode .size-button {
-    background-color: white !important;
-    color: black !important;
-    border: 1px solid black !important;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
 }
 
 .light-mode .size-options input:checked + .size-button {
-    background-color: black !important;
-    color: white !important;
-    border: 1px solid black !important;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
 }
 
 /* Tables */
 .light-mode table,
 .light-mode td,
 .light-mode th {
-    background-color: white !important;
-    color: black !important;
+    background-color: white;
+    color: black;
 }
 
 .light-mode th {
-    background-color: #e0e0e0 !important;
+    background-color: #e0e0e0;
 }
 
 .light-mode td:hover {
-    background-color: rgb(107, 18, 137) !important;
-    color: white !important;
+    background-color: rgb(107, 18, 137);
+    color: white;
 }
 
 /* Links */
 .light-mode a {
-    color: rgb(162, 170, 189) !important;
+    color: rgb(162, 170, 189);
 }
 
 .light-mode a:hover {
-    color: rgb(107, 18, 137) !important;
+    color: rgb(107, 18, 137);
 }
 
 /* Forms */
 .light-mode .login-form-container,
 .light-mode .registration-form-container {
-    background-color: white !important;
-    color: black !important;
+    background-color: white;
+    color: black;
 }
 
 .light-mode .login-form-container h1,
 .light-mode .registration-form-container h1 {
-    color: black !important;
+    color: black;
 }
 
 .light-mode .login-form-container label,
 .light-mode .registration-form-container label {
-    color: #222 !important;
+    color: #222;
 }
 
 .light-mode .login-form-container input,
 .light-mode .registration-form-container input {
-    background-color: white !important;
-    border-color: #888 !important;
-    color: black !important;
-    border: 1px solid #888 !important;
+    background-color: white;
+    border-color: #888;
+    color: black;
+    border: 1px solid #888;
 }
 
 /* Gender buttons */
 .light-mode .gender-options .gender-btn {
-    background-color: #eaeaea !important;
-    color: black !important;
-    border: 1px solid #bbb !important;
+    background-color: #eaeaea;
+    color: black;
+    border: 1px solid #bbb;
 }
 
 .light-mode .gender-options input[type="radio"]:checked + .gender-btn {
-    background-color: rgb(107, 18, 137) !important;
-    color: white !important;
-    border: 1px solid black !important;
+    background-color: rgb(107, 18, 137);
+    color: white;
+    border: 1px solid black;
 }
 
-/* Utility: ensure inputs and selects have visible borders in light mode */
 .light-mode input,
 .light-mode textarea,
 .light-mode select {
-    background-color: white !important;
-    color: black !important;
-    border: 1px solid #888 !important;
+    background-color: white;
+    color: black;
+    border: 1px solid #888;
 }
 
-/* Accessibility: focus outlines */
 .light-mode button:focus,
 .light-mode a:focus,
 .light-mode input:focus,
 .light-mode select:focus,
 .light-mode textarea:focus {
-    outline: 3px solid rgba(107, 18, 137, 0.25) !important;
-    outline-offset: 2px !important;
+    outline: 3px solid rgba(107, 18, 137, 0.25);
+    outline-offset: 2px;
 }
-/* ====================== Registration Validation ====================== */
+
 .valid {
     border: 2px solid green;
     background-color: #e6ffe6;
@@ -1168,4 +1159,3 @@ body.light-mode,
     border: 2px solid red;
     background-color: #ffe6e6;
 }
-

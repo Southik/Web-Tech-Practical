@@ -1,5 +1,5 @@
 function getTotalPrice(priceWOTax) {
-    return priceWOTax * 1.19; // adds 19% tax
+    return priceWOTax * 1.19; 
 }
 
 function showTotalPrice() {
@@ -19,9 +19,6 @@ function showTotalPrice() {
         `Without tax: €${priceWOTax.toFixed(2)} | With tax (19%): €${priceWithTax.toFixed(2)}`;
 }
 
-// ------------------------------------
-// FUNCTION 1: Toggle All Product Prices
-// ------------------------------------
 function togglePrices() {
     const prices = document.querySelectorAll(".product-price");
     if (prices.length === 0) return;
@@ -36,9 +33,7 @@ function togglePrices() {
 
     console.log("Toggled prices visibility.");
 }
-// ------------------------------------
-// FUNCTION 2: Highlight Expensive Items
-// ------------------------------------
+
 function highlightExpensive() {
     const prices = document.querySelectorAll(".product-price");
 

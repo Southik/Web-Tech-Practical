@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const username = document.getElementById("username");
     const password = document.getElementById("password");
 
-    // helper functions to mark fields
     function setValid(field) {
         field.classList.remove("invalid");
         field.classList.add("valid");
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         field.classList.add("invalid");
     }
 
-    // validate username (email format)
     function validateUsername() {
         if (username.validity.valid) {
             setValid(username);
@@ -25,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // validate password (same rules as registration)
     function validatePassword() {
         const pass = password.value;
         const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
@@ -38,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // validate **only on submit**
     form.addEventListener("submit", function (e) {
         const validUsername = validateUsername();
         const validPassword = validatePassword();
