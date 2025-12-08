@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php
-        echo "helfflo"
-    ?>
+
     <nav class="navbar">
         <div class="nav-left">
             <a href="Shoes/menShoeList.php"><u>Shoes</u></a>
@@ -62,9 +60,14 @@
                 <div class="card-text">Shoes</div>
             </div></a>
         </div>
+
+        <?php
+            $text1 = "This is my first text in a variable.";
+            echo $text1;
+        ?>
     </section>
 
 
-    
+
 </body>
 </html>

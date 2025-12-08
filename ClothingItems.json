@@ -1,0 +1,42 @@
+[
+  {
+    "pid": "J001",
+    "name": "Stylish Black Leather Jacket",
+    "description": "Premium handcrafted leather, a classic design reimagined for everyday wear and special occasions.",
+    "image": "../img/menJacket1.png",
+    "category": "Jackets",
+    "subcategory": "Leather",
+    "price": 120.00,
+    "detailsPage": "menJacket1.php"
+  },
+  {
+    "pid": "J002",
+    "name": "Casual Blue Denim Jacket",
+    "description": "Highest quality Denim Jacket - Perfect blend of comfort, style, and practicality.",
+    "image": "../img/menJacket2.png",
+    "category": "Jackets",
+    "subcategory": "Denim",
+    "price": 109.99,
+    "detailsPage": "menJacket2.php"
+  },
+  {
+    "pid": "S001",
+    "name": "Classic White Shirt",
+    "description": "Timeless design and fabric that fit every wardrobe.",
+    "image": "../img/menshirt1.png",
+    "category": "Shirts",
+    "subcategory": "Formal",
+    "price": 49.99,
+    "detailsPage": "menShirt1.php"
+  },
+  {
+    "pid": "S002",
+    "name": "Casual Blue Shirt",
+    "description": "Effortless style you can wear anywhere.",
+    "image": "../img/menshirt2.png",
+    "category": "Shirts",
+    "subcategory": "Casual",
+    "price": 39.99,
+    "detailsPage": "menShirt2.php"
+  }
+]

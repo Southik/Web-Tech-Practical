@@ -51,5 +51,9 @@
 			</section>
 
 	</div>
+	<?php
+		$text1 = "This is my first text in a variable.";
+		echo $text1;
+    ?>
 </body>
 </html>
