@@ -12,12 +12,12 @@
     <table>
         <tr>
             <td>
-                <a href="Shoes/menShoeList.html" > 
+                <a href="Shoes/menShoeList.php" > 
                     <button type="button"><h2>MEN</h2></button>
                 </a>
             </td>
             <td>
-                <a href="Shoes/womenShoeList.html"> <!-- I think this path should be empty since weve not yet implemented for women-->
+                <a href="Shoes/womenShoeList.php"> <!-- I think this path should be empty since weve not yet implemented for women-->
                     <button type="button"><h2>WOMEN</h2></button>
                 </a>
             </td>
@@ -29,7 +29,7 @@
         </tr>
     </table>
 
-    <a href="index.html">
+    <a href="index.php">
         <button type="button"><h3>Go Back</h3></button>
     </a>
 </body>

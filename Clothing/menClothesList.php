@@ -10,12 +10,12 @@
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <a href="../Shoes/menShoeList.html">Shoes</a>
-            <a href="menClothesList.html">Clothing</a>
+            <a href="../Shoes/menShoeList.php">Shoes</a>
+            <a href="menClothesList.php">Clothing</a>
         </div>
 
         <div class="nav-right">
-            <a href="../login.html" class="login-button">Customer Login</a>
+            <a href="../login.php" class="login-button">Customer Login</a>
         </div>
 
         <button id="mode-toggle" aria-pressed="false">Toggle Light Mode</button>
@@ -25,7 +25,7 @@
 
     <!-- Jackets -->
     <div class="category" id="jackets">
-        <h3 class="category-title"><a href="menJacketsList.html">Jackets</a></h3>
+        <h3 class="category-title"><a href="menJacketsList.php">Jackets</a></h3>
         <hr />
         <p class="subtitle-shoe"><i>Stylish and versatile jackets made for every season.</i></p>
         <br />
@@ -37,7 +37,7 @@
                     Premium handcrafted leather, a classic design reimagined for everyday wear and special occasions.
                 </div>
                 <div class="product-price">€120.00</div>
-                <a href="menJacket1.html" class="details-button">View Details</a>
+                <a href="menJacket1.php" class="details-button">View Details</a>
 
                 <form>
                     <input type="number" min="1" value="1" class="quantity-input" />
@@ -52,7 +52,7 @@
                     Highest quality Denim Jacket - Perfect blend of comfort, style, and practicality.
                 </div>
                 <div class="product-price">€109.99</div>
-                <a href="menJacket2.html" class="details-button">View Details</a>
+                <a href="menJacket2.php" class="details-button">View Details</a>
 
                 <form>
                     <input type="number" min="1" value="1" class="quantity-input" />
@@ -64,7 +64,7 @@
 
     <!-- Shirts -->
     <div class="category" id="shirts">
-        <h3 class="category-title"><a href="menShirtList.html">Shirts</a></h3>
+        <h3 class="category-title"><a href="menShirtList.php">Shirts</a></h3>
         <hr />
         <p class="subtitle-shoe"><i>Casual or formal — a perfect shirt for every mood.</i></p>
         <br />
@@ -76,7 +76,7 @@
                     Timeless design and fabric that fit every wardrobe.
                 </div>
                 <div class="product-price">€49.99</div>
-                <a href="menShirt1.html" class="details-button">View Details</a>
+                <a href="menShirt1.php" class="details-button">View Details</a>
 
                 <form>
                     <input type="number" min="1" value="1" class="quantity-input" />
@@ -91,7 +91,7 @@
                     Effortless style you can wear anywhere.
                 </div>
                 <div class="product-price">€39.99</div>
-                <a href="menShirt2.html" class="details-button">View Details</a>
+                <a href="menShirt2.php" class="details-button">View Details</a>
 
                 <form>
                     <input type="number" min="1" value="1" class="quantity-input" />
@@ -108,10 +108,10 @@
 
     <!-- Navigation Buttons -->
     <div class="navigation-buttons">
-        <a href="../index.html">
+        <a href="../index.php">
             <button type="button" class="nav-button">Go Back</button>
         </a>
-        <a href="../shoppingCartClothing.html">
+        <a href="../shoppingCartClothing.php">
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>

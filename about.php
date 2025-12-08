@@ -10,11 +10,11 @@
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <a href="Shoes/menShoeList.html">Shoes</a>
-            <a href="Clothing/menClothesList.html">Clothing</a>
+            <a href="Shoes/menShoeList.php">Shoes</a>
+            <a href="Clothing/menClothesList.php">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="login.html" class="login-button">Customer Login</a>
+            <a href="login.php" class="login-button">Customer Login</a>
         </div>
 	    <button id="mode-toggle">Toggle Light Mode</button>
         <script src="lightMode.js" defer></script>
@@ -42,10 +42,10 @@
 
 			<section>
 
-				<a href="index.html">
+				<a href="index.php">
 					<button type="button"><h3>Back to Homepage</h3></button>
 				</a>
-				<a href="login.html">
+				<a href="login.php">
 					<button type="button"><h3>Customer Login</h3></button>
 				</a>
 			</section>

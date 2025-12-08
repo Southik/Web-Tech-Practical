@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Stylish Black Leather Jacket</title>
+    <title>Classic Brown Leather Shoe</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <a href="../Shoes/menShoeList.html">Shoes</a>
-            <a href="../Clothing/menClothesList.html">Clothing</a>
+            <a href="../Shoes/menShoeList.php">Shoes</a>
+            <a href="../Clothing/menClothesList.php">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="../login.html" class="login-button">Customer Login</a>
+            <a href="../login.php" class="login-button">Customer Login</a>
         </div>
         <button id="mode-toggle">Toggle Light Mode</button>
         <script src="../lightMode.js" defer></script>
@@ -21,63 +21,68 @@
 
     <section class="product-detail">
         <div class="product-layout full-width-layout">
+
             <div class="product-image-container full-image">
-                <img src="../img/menJacket1.png" alt="Stylish Black Leather Jacket" class="product-image">
+                <img src="../img/brown leather.png" alt="Classic Brown Leather Shoe" class="product-image">
             </div>
 
             <div class="product-info">
-                <h1 class="page-title">Stylish Black Leather Jacket</h1>
+                <h1 class="page-title">Classic Brown Leather Shoe</h1>
                 <p class="product-subtitle">
-                    Premium handcrafted leather, a classic design reimagined for everyday wear and special occasions.
+                    Premium handcrafted leather shoes that combine style and elegance.
                 </p>
-                <div class="product-price">€120.00</div>
+                <div class="product-price">€79.99</div>
 
                 <div class="size-selector">
                     <label>Select Size:</label>
                     <div class="size-options">
                         <label>
-                            <input type="radio" name="size" value="S">
-                            <span class="size-button">S</span>
+                            <input type="radio" name="size" value="EU 40">
+                            <span class="size-button">EU 40</span>
                         </label>
                         <label>
-                            <input type="radio" name="size" value="M">
-                            <span class="size-button">M</span>
+                            <input type="radio" name="size" value="EU 41">
+                            <span class="size-button">EU 41</span>
                         </label>
                         <label>
-                            <input type="radio" name="size" value="L">
-                            <span class="size-button">L</span>
+                            <input type="radio" name="size" value="EU 42">
+                            <span class="size-button">EU 42</span>
                         </label>
                         <label>
-                            <input type="radio" name="size" value="XL">
-                            <span class="size-button">XL</span>
+                            <input type="radio" name="size" value="EU 43">
+                            <span class="size-button">EU 43</span>
                         </label>
                         <label>
-                            <input type="radio" name="size" value="XXL">
-                            <span class="size-button">XXL</span>
+                            <input type="radio" name="size" value="EU 44">
+                            <span class="size-button">EU 44</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="EU 45">
+                            <span class="size-button">EU 45</span>
                         </label>
                     </div>
                 </div>
 
                 <div class="product-actions">
-                    <a href="../shoppingCartClothing.html">
+                    <a href="../shoppingCartShoe.php">
                         <button type="button" class="nav-button">Add to Shopping Cart</button>
                     </a>
                 </div>
+
                 <p class="pickup-note">Free pickup available in store.</p>
             </div>
         </div>
     </section>
+
     <hr>
 
     <div class="navigation-buttons">
-        <a href="../Clothing/menClothesList.html">
+        <a href="../Shoes/menShoeList.php">
             <button type="button" class="nav-button">Go Back</button>
         </a>
-        <a href="../shoppingCartClothing.html">
+        <a href="../shoppingCartShoe.php">
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>
-	
-
 </body>
 </html>

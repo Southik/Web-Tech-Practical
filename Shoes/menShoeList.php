@@ -10,11 +10,11 @@
 
     <nav class="navbar">
         <div class="nav-left">
-            <a href="menShoeList.html">Shoes</a>
-            <a href="../Clothing/menClothesList.html">Clothing</a>
+            <a href="menShoeList.php">Shoes</a>
+            <a href="../Clothing/menClothesList.php">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="../login.html" class="login-button">Customer Login</a>
+            <a href="../login.php" class="login-button">Customer Login</a>
         </div>
         <button id="mode-toggle">Toggle Light Mode</button>
         <script src="../lightMode.js" defer></script>
@@ -23,7 +23,7 @@
     <h1 class="page-title">ALL THE SHOES FOR MEN</h1>
 
     <div class="category" id="formal-shoes">
-        <h3 class="category-title"><a href="menFormalShoeList.html">Formal Shoes</a></h3>
+        <h3 class="category-title"><a href="menFormalShoeList.php">Formal Shoes</a></h3>
         <hr>
         <p class="subtitle-shoe"><i>Elegant and comfortable shoes for business, events, and daily wear.</i></p>
         <br>
@@ -35,7 +35,7 @@
                     Premium handcrafted leather shoes that combine timeless style with modern comfort.
                 </div>
                 <div class="product-price">€89.99</div>
-                <a href="menLeatherShoe007.html" class="details-button">View Details</a>
+                <a href="menLeatherShoe007.php" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
@@ -50,7 +50,7 @@
                     Premium handcrafted leather shoes that combine style and elegance.
                 </div>
                 <div class="product-price">€79.99</div>
-                <a href="menLeatherShoe008.html" class="details-button">View Details</a>
+                <a href="menLeatherShoe008.php" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
@@ -61,7 +61,7 @@
     </div>
 
     <div class="category" id="running-shoes">
-        <h3 class="category-title"><a href="menRunningShoeList.html">Running Shoes</a></h3>
+        <h3 class="category-title"><a href="menRunningShoeList.php">Running Shoes</a></h3>
         <hr>
         <p class="subtitle-shoe"><i>Durable and performant shoes for running, multisport and also daily wear.</i></p>
         <br>
@@ -73,7 +73,7 @@
                     Designed for all-day comfort and performance, perfect for training or casual wear.
                 </div>
                 <div class="product-price">€59.99</div>
-                <a href="menRunningShoe1.html" class="details-button">View Details</a>
+                <a href="menRunningShoe1.php" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
@@ -88,7 +88,7 @@
                     With the iconic design - Engineered for speed and comfort on every run.
                 </div>
                 <div class="product-price">€69.99</div>
-                <a href="menRunningShoe2.html" class="details-button">View Details</a>
+                <a href="menRunningShoe2.php" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
@@ -105,10 +105,10 @@
 	
     <!-- Navigation Buttons -->
     <div class="navigation-buttons">
-        <a href="../index.html">
+        <a href="../index.php">
             <button type="button" class="nav-button">Go Back</button>
         </a>
-        <a href="../shoppingCartShoe.html">
+        <a href="../shoppingCartShoe.php">
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>

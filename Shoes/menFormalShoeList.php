@@ -9,11 +9,11 @@
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <a href="../Shoes/menShoeList.html">Shoes</a>
-            <a href="../Clothing/menClothesList.html">Clothing</a>
+            <a href="../Shoes/menShoeList.php">Shoes</a>
+            <a href="../Clothing/menClothesList.php">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="../login.html" class="login-button">Customer Login</a>
+            <a href="../login.php" class="login-button">Customer Login</a>
         </div>
         <button id="mode-toggle">Toggle Light Mode</button>
         <script src="../lightMode.js" defer></script>
@@ -33,7 +33,7 @@
                     Premium handcrafted leather shoes that combine timeless style with modern comfort.
                 </div>
                 <div class="product-price">€89.99</div>
-                <a href="menLeatherShoe007.html" class="details-button">View Details</a>
+                <a href="menLeatherShoe007.php" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
@@ -48,7 +48,7 @@
                     Premium handcrafted leather shoes that combine style and elegance.
                 </div>
                 <div class="product-price">€79.99</div>
-                <a href="menLeatherShoe008.html" class="details-button">View Details</a>
+                <a href="menLeatherShoe008.php" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
@@ -64,10 +64,10 @@
 	</div>
 
     <div class="navigation-buttons">
-        <a href="../Shoes/menShoeList.html">
+        <a href="../Shoes/menShoeList.php">
             <button type="button" class="nav-button">Go Back</button>
         </a>
-        <a href="../shoppingCartShoe.html">
+        <a href="../shoppingCartShoe.php">
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>

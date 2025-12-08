@@ -9,7 +9,7 @@
 </head>
 <body>
         <nav class="navbar">
-        <a href="logout.html"> 
+        <a href="logout.php"> 
             <button type="button" class="logout-button">Logout</button>
         </a>
         <button id="mode-toggle">Toggle Light Mode</button>
@@ -19,7 +19,7 @@
     <div class="registration-form-container">
         <h1 class="registration-heading">Customer Registration</h1>
 
-        <form action="customer.html" method="get" autocomplete="on">
+        <form action="customer.php" method="get" autocomplete="on">
             <label for="firstname">Firstname:</label><br/>
             <input type="text" id="firstname" name="Firstname" placeholder="Firstname" required><br/><br/>
 
@@ -68,7 +68,7 @@
             <input type="submit" value="Register Now">
             <input type="reset" value="Reset"><br/><br/>
 
-            <a href="login.html" id="back-button">
+            <a href="login.php" id="back-button">
                 <button type="button">Go Back</button>
             </a>
         </form>

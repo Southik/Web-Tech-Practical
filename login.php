@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="logout.html"> 
+        <a href="logout.php"> 
             <button type="button" class="logout-button">Logout</button>
         </a>
     <button id="mode-toggle">Toggle Light Mode</button>
@@ -17,7 +17,7 @@
         <div class="login-form-container">
             <h1>Customer Login</h1>
 
-            <form action="customer.html" method="get">
+            <form action="customer.php" method="get">
                 <label for="username">Username:</label><br/>
                 <input type="text" id="username" name="username" placeholder="abc@gmail.com" required><br/><br/>
 
@@ -27,14 +27,14 @@
                 <input type="submit" value="Login">
 
 
-                <a href="registration.html">
+                <a href="registration.php">
                     <button type="button">Registration</button>
                 </a>
             </form>
 
             <br/><br/>
 
-            <a href="index.html" id="back-button">
+            <a href="index.php" id="back-button">
                 <button type="button">Go Back</button>
             </a>
         </div>
