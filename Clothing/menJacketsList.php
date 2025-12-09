@@ -7,6 +7,11 @@
 </head>
 
 <body>
+<?php
+$json = file_get_contents(__DIR__ . '/../ClothingItems.json');
+$items = json_decode($json, true);
+?>
+
     <nav class="navbar">
         <div class="nav-left">
             <a href="../Shoes/menShoeList.php">Shoes</a>
@@ -26,35 +31,36 @@
         <p class="subtitle-shoe"><i>Stylish and versatile jackets made for every season.</i></p>
         <br>
         <div class="product-grid">
+		
+		<?php foreach ($items as $item): ?>
+        <?php if ($item['category'] !== 'Jackets') continue; ?>
+		
             <div class="product-card">
-                <img src="../img/menJacket1.png" alt="Stylish Black Leather Jacket" class="product-image">
-                <div class="product-name">Stylish Black Leather Jacket</div>
+                
+				<img src="<?php echo htmlspecialchars($item['image']); ?>"
+                 alt="<?php echo htmlspecialchars($item['name']); ?>"
+                 class="product-image">
+				 
+                <div class="product-name">
+					<?php echo htmlspecialchars($item['name']); ?>
+				</div>
+				
                 <div class="product-description">
-                    Premium handcrafted leather, a classic design reimagined for everyday wear and special occasions.
+                    <?php echo htmlspecialchars($item['description']); ?>
                 </div>
-                <div class="product-price">€120.00</div>
-                <a href="menJacket1.php" class="details-button">View Details</a>
+				
+                <div class="product-price">
+					€<?php echo number_format($item['price'], 2); ?>
+				</div>
+				
+                <a href="../product.php?category=clothing&pid=<?php echo urlencode($item['pid']); ?>" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
 					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
 				</form>
             </div>
-
-            <div class="product-card">
-                <img src="../img/menJacket2.png" alt="Casual Blue Denim Jacket" class="product-image">
-                <div class="product-name">Casual Blue Denim Jacket</div>
-                <div class="product-description">
-                    Highest quality Denim Jacket - Perfect blend of comfort, style, and practicality.
-                </div>
-                <div class="product-price">€109.99</div>
-                <a href="menJacket2.php" class="details-button">View Details</a>
-				
-				<form>
-					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-				</form>
-            </div>
+        <?php endforeach; ?>     
         </div>
     </div>
 	
@@ -72,7 +78,24 @@
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>
+	
+	<!-- Calculator  -->
+	<div class="tax-calculator">
+    <h2>Price Calculator (with 19% Tax)</h2>
 
+    <label>Price Without Tax (€):</label>
+    <input type="number" id="priceWOTax" min="0" step="0.01">
+
+    <button type="button" onclick="showTotalPrice()">Calculate</button>
+
+    <p id="price-result"></p>
+	</div> <br><br>
+	<!-- EXTRA 2 FUNCTIONS -->
+	<button type="button" onclick="togglePrices()">Show/Hide All Prices</button>
+	<button type="button" onclick="highlightExpensive()">Highlight Expensive Items</button>
+	<br><br>
+	
+<script src="../priceCalculator.js"></script>
 <script src="../collection.js"></script>
 </body>
 </html>

@@ -7,6 +7,10 @@
 </head>
 
 <body>
+<?php
+$json = file_get_contents(__DIR__ . '/../ShoesItems.json');
+$items = json_decode($json, true);
+?>
 
     <nav class="navbar">
         <div class="nav-left">
@@ -28,14 +32,29 @@
         <p class="subtitle-shoe"><i>Elegant and comfortable shoes for business, events, and daily wear.</i></p>
         <br>
         <div class="product-grid">
+		
+		<?php foreach ($items as $item): ?>
+        <?php if ($item['category'] !== 'Formal Shoes') continue; ?>
+		
             <div class="product-card">
-                <img src="../img/leather shoe.png" alt="Classic Black Leather Shoe" class="product-image">
-                <div class="product-name">Classic Black Leather Shoe</div>
+                
+				<img src="<?php echo htmlspecialchars($item['image']); ?>"
+                 alt="<?php echo htmlspecialchars($item['name']); ?>"
+                 class="product-image">
+				 
+                <div class="product-name">
+					<?php echo htmlspecialchars($item['name']); ?>
+				</div>
+				
                 <div class="product-description">
-                    Premium handcrafted leather shoes that combine timeless style with modern comfort.
+                    <?php echo htmlspecialchars($item['description']); ?>
                 </div>
-                <div class="product-price">€89.99</div>
-                <a href="menLeatherShoe007.php" class="details-button">View Details</a>
+                
+				<div class="product-price">
+					€<?php echo number_format($item['price'], 2); ?>
+				</div>
+				
+                <a href="../product.php?category=shoes&pid=<?php echo urlencode($item['pid']); ?>" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
@@ -43,20 +62,7 @@
 				</form> 
             </div>
 
-            <div class="product-card">
-                <img src="../img/brown leather.png" alt="Classic Brown Leather Shoe" class="product-image">
-                <div class="product-name">Classic Brown Leather Shoe</div>
-                <div class="product-description">
-                    Premium handcrafted leather shoes that combine style and elegance.
-                </div>
-                <div class="product-price">€79.99</div>
-                <a href="menLeatherShoe008.php" class="details-button">View Details</a>
-				
-				<form>
-					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-				</form> 
-            </div>
+        <?php endforeach; ?>      
         </div>
     </div>
 
@@ -66,14 +72,29 @@
         <p class="subtitle-shoe"><i>Durable and performant shoes for running, multisport and also daily wear.</i></p>
         <br>
         <div class="product-grid">
+
+		<?php foreach ($items as $item): ?>
+        <?php if ($item['category'] !== 'Running Shoes') continue; ?>
+
             <div class="product-card">
-                <img src="../img/msportshoe1.png" alt="Ice White Running Shoes" class="product-image">
-                <div class="product-name">Ice White Running Shoes</div>
+                
+				<img src="<?php echo htmlspecialchars($item['image']); ?>"
+                 alt="<?php echo htmlspecialchars($item['name']); ?>"
+                 class="product-image">
+				 
+                <div class="product-name">
+					<?php echo htmlspecialchars($item['name']); ?>
+				</div>
+				
                 <div class="product-description">
-                    Designed for all-day comfort and performance, perfect for training or casual wear.
+                    <?php echo htmlspecialchars($item['description']); ?>
                 </div>
-                <div class="product-price">€59.99</div>
-                <a href="menRunningShoe1.php" class="details-button">View Details</a>
+				
+                <div class="product-price">
+					€<?php echo number_format($item['price'], 2); ?>
+				</div>
+				
+                <a href="../product.php?category=shoes&pid=<?php echo urlencode($item['pid']); ?>" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
@@ -81,20 +102,7 @@
 				</form> 
             </div>
 
-            <div class="product-card">
-                <img src="../img/msportshoe2.png" alt="Classic Stripped Running Shoe" class="product-image">
-                <div class="product-name">Classic Stripped Running Shoe</div>
-                <div class="product-description">
-                    With the iconic design - Engineered for speed and comfort on every run.
-                </div>
-                <div class="product-price">€69.99</div>
-                <a href="menRunningShoe2.php" class="details-button">View Details</a>
-				
-				<form>
-					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-				</form> 
-            </div>
+        <?php endforeach; ?>      
         </div>
     </div>
 	
@@ -112,6 +120,25 @@
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>
+	
+	 <!-- Calculator  -->
+	<div class="tax-calculator">
+    <h2>Price Calculator (with 19% Tax)</h2>
+
+    <label>Price Without Tax (€):</label>
+    <input type="number" id="priceWOTax" min="0" step="0.01">
+
+    <button type="button" onclick="showTotalPrice()">Calculate</button>
+
+    <p id="price-result"></p>
+	</div> <br><br>
+	
+	<!-- EXTRA 2 FUNCTIONS -->
+	<button type="button" onclick="togglePrices()">Show/Hide All Prices</button>
+	<button type="button" onclick="highlightExpensive()">Highlight Expensive Items</button>
+	<br><br>
+	
 <script src="../collection.js"></script>
+<script src="../priceCalculator.js"></script>
 </body>
 </html>

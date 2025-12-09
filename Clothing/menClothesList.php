@@ -8,6 +8,11 @@
 </head>
 
 <body>
+<?php
+$json = file_get_contents(__DIR__ . '/../ClothingItems.json');
+$items = json_decode($json, true);
+?>
+
     <nav class="navbar">
         <div class="nav-left">
             <a href="../Shoes/menShoeList.php">Shoes</a>
@@ -30,35 +35,37 @@
         <p class="subtitle-shoe"><i>Stylish and versatile jackets made for every season.</i></p>
         <br />
         <div class="product-grid">
+		
+		<?php foreach ($items as $item): ?>
+        <?php if ($item['category'] !== 'Jackets') continue; ?>
+		
             <div class="product-card">
-                <img src="../img/menJacket1.png" alt="Stylish Black Leather Jacket" class="product-image" />
-                <div class="product-name">Stylish Black Leather Jacket</div>
+                
+				<img src="<?php echo htmlspecialchars($item['image']); ?>"
+                 alt="<?php echo htmlspecialchars($item['name']); ?>"
+                 class="product-image">
+				 
+                <div class="product-name">
+					<?php echo htmlspecialchars($item['name']); ?>
+				</div>
+				
                 <div class="product-description">
-                    Premium handcrafted leather, a classic design reimagined for everyday wear and special occasions.
+                    <?php echo htmlspecialchars($item['description']); ?>
                 </div>
-                <div class="product-price">€120.00</div>
-                <a href="menJacket1.php" class="details-button">View Details</a>
+				
+                <div class="product-price">
+					€<?php echo number_format($item['price'], 2); ?>
+				</div>
+				
+                <a href="../product.php?category=clothing&pid=<?php echo urlencode($item['pid']); ?>" class="details-button">View Details</a>
 
                 <form>
                     <input type="number" min="1" value="1" class="quantity-input" />
                     <button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
                 </form>
             </div>
-
-            <div class="product-card">
-                <img src="../img/menJacket2.png" alt="Casual Blue Denim Jacket" class="product-image" />
-                <div class="product-name">Casual Blue Denim Jacket</div>
-                <div class="product-description">
-                    Highest quality Denim Jacket - Perfect blend of comfort, style, and practicality.
-                </div>
-                <div class="product-price">€109.99</div>
-                <a href="menJacket2.php" class="details-button">View Details</a>
-
-                <form>
-                    <input type="number" min="1" value="1" class="quantity-input" />
-                    <button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-                </form>
-            </div>
+			
+		<?php endforeach; ?>  
         </div>
     </div>
 
@@ -69,35 +76,36 @@
         <p class="subtitle-shoe"><i>Casual or formal — a perfect shirt for every mood.</i></p>
         <br />
         <div class="product-grid">
+		
+		<?php foreach ($items as $item): ?>
+        <?php if ($item['category'] !== 'Shirts') continue; ?>
+
             <div class="product-card">
-                <img src="../img/menshirt1.png" alt="Classic White Shirt" class="product-image" />
-                <div class="product-name">Classic White Shirt</div>
-                <div class="product-description">
-                    Timeless design and fabric that fit every wardrobe.
+                
+				<img src="<?php echo htmlspecialchars($item['image']); ?>"
+                 alt="<?php echo htmlspecialchars($item['name']); ?>"
+                 class="product-image">
+                
+				<div class="product-name">
+					<?php echo htmlspecialchars($item['name']); ?>
+				</div>
+                
+				<div class="product-description">
+					<?php echo htmlspecialchars($item['description']); ?>
                 </div>
-                <div class="product-price">€49.99</div>
-                <a href="menShirt1.php" class="details-button">View Details</a>
+				
+                <div class="product-price">
+					€<?php echo number_format($item['price'], 2); ?>
+				</div>
+				
+                <a href="../product.php?category=clothing&pid=<?php echo urlencode($item['pid']); ?>" class="details-button">View Details</a>
 
                 <form>
                     <input type="number" min="1" value="1" class="quantity-input" />
                     <button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
                 </form>
             </div>
-
-            <div class="product-card">
-                <img src="../img/menshirt2.png" alt="Casual Blue Shirt" class="product-image" />
-                <div class="product-name">Casual Blue Shirt</div>
-                <div class="product-description">
-                    Effortless style you can wear anywhere.
-                </div>
-                <div class="product-price">€39.99</div>
-                <a href="menShirt2.php" class="details-button">View Details</a>
-
-                <form>
-                    <input type="number" min="1" value="1" class="quantity-input" />
-                    <button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-                </form>
-            </div>
+		<?php endforeach; ?>
         </div>
     </div>
 
@@ -116,7 +124,7 @@
         </a>
     </div>
 	
-	 <!-- Calculator  -->
+	<!-- Calculator  -->
 	<div class="tax-calculator">
     <h2>Price Calculator (with 19% Tax)</h2>
 
@@ -131,7 +139,6 @@
 	<button type="button" onclick="togglePrices()">Show/Hide All Prices</button>
 	<button type="button" onclick="highlightExpensive()">Highlight Expensive Items</button>
 	<br><br>
-
 
     <!-- Scripts -->
     <script src="../collection.js"></script>

@@ -7,6 +7,11 @@
 </head>
 
 <body>
+<?php
+$json = file_get_contents(__DIR__ . '/../ShoesItems.json');
+$items = json_decode($json, true);
+?>
+
     <nav class="navbar">
         <div class="nav-left">
             <a href="../Shoes/menShoeList.php">Shoes</a>
@@ -26,14 +31,28 @@
         <p class="subtitle-shoe"><i>Elegant and comfortable shoes for business, events, and daily wear.</i></p>
         <br>
         <div class="product-grid">
+		
+		<?php foreach ($items as $item): ?>
+        <?php if ($item['category'] !== 'Formal Shoes') continue; ?>
+		
             <div class="product-card">
-                <img src="../img/leather shoe.png" alt="Classic Black Leather Shoe" class="product-image">
-                <div class="product-name">Classic Black Leather Shoe</div>
+                <img src="<?php echo htmlspecialchars($item['image']); ?>"
+                 alt="<?php echo htmlspecialchars($item['name']); ?>"
+                 class="product-image">
+				 
+                <div class="product-name">
+					<?php echo htmlspecialchars($item['name']); ?>
+				</div>
+				
                 <div class="product-description">
-                    Premium handcrafted leather shoes that combine timeless style with modern comfort.
+                    <?php echo htmlspecialchars($item['description']); ?>
                 </div>
-                <div class="product-price">€89.99</div>
-                <a href="menLeatherShoe007.php" class="details-button">View Details</a>
+				
+                <div class="product-price">
+					€<?php echo number_format($item['price'], 2); ?>
+				</div>
+				
+                <a href="../product.php?category=shoes&pid=<?php echo urlencode($item['pid']); ?>" class="details-button">View Details</a>
 				
 				<form>
 					<input type="number" min="1" value="1" class="quantity-input"/>
@@ -41,20 +60,7 @@
 				</form> 
             </div>
 
-            <div class="product-card">
-                <img src="../img/brown leather.png" alt="Classic Brown Leather Shoe" class="product-image">
-                <div class="product-name">Classic Brown Leather Shoe</div>
-                <div class="product-description">
-                    Premium handcrafted leather shoes that combine style and elegance.
-                </div>
-                <div class="product-price">€79.99</div>
-                <a href="menLeatherShoe008.php" class="details-button">View Details</a>
-				
-				<form>
-					<input type="number" min="1" value="1" class="quantity-input"/>
-					<button type="button" class="collection-button" onclick="addToCollectionListC(this)">Add to Collection List</button>
-				</form> 
-            </div>
+        <?php endforeach; ?>       
         </div>
     </div>
 	
