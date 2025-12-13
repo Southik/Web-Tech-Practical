@@ -9,11 +9,11 @@
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <a href="../Shoes/menShoeList.html">Shoes</a>
-            <a href="../Clothing/menClothesList.html">Clothing</a>
+            <a href="../Shoes/menShoeList.php">Shoes</a>
+            <a href="../Clothing/menClothesList.php">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="../login.html" class="login-button">Customer Login</a>
+            <a href="../login.php" class="login-button">Customer Login</a>
         </div>
         <button id="mode-toggle">Toggle Light Mode</button>
         <script src="../lightMode.js" defer></script>
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="product-actions">
-                    <a href="../shoppingCartClothing.html">
+                    <a href="../shoppingCartClothing.php">
                         <button type="button" class="nav-button">Add to Shopping Cart</button>
                     </a>
                 </div>
@@ -72,10 +72,10 @@
     <hr>
 
     <div class="navigation-buttons">
-        <a href="../Clothing/menClothesList.html">
+        <a href="../Clothing/menClothesList.php">
             <button type="button" class="nav-button">Go Back</button>
         </a>
-        <a href="../shoppingCartClothing.html">
+        <a href="../shoppingCartClothing.php">
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>

@@ -1,0 +1,42 @@
+[
+  {
+    "pid": "007",
+    "name": "Classic Black Leather Shoe",
+    "description": "Premium handcrafted leather shoes that combine timeless style with modern comfort.",
+    "image": "../img/leather shoe.png",
+    "category": "Formal Shoes",
+    "subcategory": "Leather",
+    "price": 89.99,
+    "detailsPage": "menLeatherShoe007.php"
+  },
+  {
+    "pid": "008",
+    "name": "Classic Brown Leather Shoe",
+    "description": "Premium handcrafted leather shoes that combine style and elegance.",
+    "image": "../img/brown leather.png",
+    "category": "Formal Shoes",
+    "subcategory": "Leather",
+    "price": 79.99,
+    "detailsPage": "menLeatherShoe008.php"
+  },
+  {
+    "pid": "001",
+    "name": "Ice White Running Shoes",
+    "description": "Designed for all-day comfort and performance, perfect for training or casual wear.",
+    "image": "../img/msportshoe1.png",
+    "category": "Running Shoes",
+    "subcategory": "Sport",
+    "price": 59.99,
+    "detailsPage": "menRunningShoe1.php"
+  },
+  {
+    "pid": "002",
+    "name": "Classic Stripped Running Shoe",
+    "description": "With the iconic design - Engineered for speed and comfort on every run.",
+    "image": "../img/msportshoe2.png",
+    "category": "Running Shoes",
+    "subcategory": "Sport",
+    "price": 69.99,
+    "detailsPage": "menRunningShoe2.php"
+  }
+]

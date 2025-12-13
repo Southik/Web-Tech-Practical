@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Classic White Shirt</title>
+    <title>Stylish Black Leather Jacket</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <a href="../Shoes/menShoeList.html">Shoes</a>
-            <a href="../Clothing/menClothesList.html">Clothing</a>
+            <a href="../Shoes/menShoeList.php">Shoes</a>
+            <a href="../Clothing/menClothesList.php">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="../login.html" class="login-button">Customer Login</a>
+            <a href="../login.php" class="login-button">Customer Login</a>
         </div>
         <button id="mode-toggle">Toggle Light Mode</button>
         <script src="../lightMode.js" defer></script>
@@ -22,15 +22,15 @@
     <section class="product-detail">
         <div class="product-layout full-width-layout">
             <div class="product-image-container full-image">
-                <img src="../img/menshirt1.png" alt="Classic White Shirt" class="product-image">
+                <img src="../img/menJacket1.png" alt="Stylish Black Leather Jacket" class="product-image">
             </div>
 
             <div class="product-info">
-                <h1 class="page-title">Classic White Shirt</h1>
+                <h1 class="page-title">Stylish Black Leather Jacket</h1>
                 <p class="product-subtitle">
-                    Timeless design and fabric that fit every wardrobe.
+                    Premium handcrafted leather, a classic design reimagined for everyday wear and special occasions.
                 </p>
-                <div class="product-price">€49.99</div>
+                <div class="product-price">€120.00</div>
 
                 <div class="size-selector">
                     <label>Select Size:</label>
@@ -59,25 +59,25 @@
                 </div>
 
                 <div class="product-actions">
-                    <a href="../shoppingCartClothing.html">
+                    <a href="../shoppingCartClothing.php">
                         <button type="button" class="nav-button">Add to Shopping Cart</button>
                     </a>
                 </div>
-
                 <p class="pickup-note">Free pickup available in store.</p>
             </div>
         </div>
     </section>
-
     <hr>
 
     <div class="navigation-buttons">
-        <a href="../Clothing/menClothesList.html">
+        <a href="../Clothing/menClothesList.php">
             <button type="button" class="nav-button">Go Back</button>
         </a>
-        <a href="../shoppingCartClothing.html">
+        <a href="../shoppingCartClothing.php">
             <button type="button" class="nav-button">Shopping Cart</button>
         </a>
     </div>
+	
+
 </body>
 </html>

@@ -8,11 +8,11 @@
 <body>
 	<nav class="navbar">
         <div class="nav-left">
-            <a href="Shoes/menShoeList.html">Shoes</a>
-            <a href="Clothing/menClothesList.html">Clothing</a>
+            <a href="Shoes/menShoeList.php">Shoes</a>
+            <a href="Clothing/menClothesList.php">Clothing</a>
         </div>
         <div class="nav-right">
-            <a href="login.html" class="login-button">Customer Login</a>
+            <a href="login.php" class="login-button">Customer Login</a>
         </div>
 	    <button id="mode-toggle">Toggle Light Mode</button>
         <script src="lightMode.js" defer></script>
@@ -30,9 +30,9 @@
 			<div class="customer-buttons">Change Info</div><br>
 
 			<div>
-				<a href=login.html class="customer-buttons">Go Back</a>
-				<a href=logout.html class="customer-buttons">Logout</a> 
-				<a href=index.html class="customer-buttons">Unregister</a>
+				<a href=login.php class="customer-buttons">Go Back</a>
+				<a href=logout.php class="customer-buttons">Logout</a> 
+				<a href=index.php class="customer-buttons">Unregister</a>
 			</div><br><br>
 		<a id="help-link">Need Help?</a>
 	</div>

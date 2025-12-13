@@ -1,3 +1,5 @@
+<!-- For Southik: http://localhost/myWebShop/Web-Tech-Practical/ -->
+<!-- For Divyesh: http://localhost/myWebShop/Web-Tech-Practical/ -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,13 +8,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="nav-left">
-            <a href="Shoes/menShoeList.html"><u>Shoes</u></a>
-            <a href="Clothing/menClothesList.html"><u>Clothing</u></a>
+            <a href="Shoes/menShoeList.php"><u>Shoes</u></a>
+            <a href="Clothing/menClothesList.php"><u>Clothing</u></a>
         </div>
         <div class="nav-right">
-            <a href="login.html" class="login-button"> ➔ Customer Login </a>
+            <a href="login.php" class="login-button"> ➔ Customer Login </a>
             <a class="login-button" id="mode-toggle">Toggle Light Mode</a>
 
         </div>
@@ -32,7 +35,7 @@
 				<img id="img6" src="img/HPimg.jpg" alt="Store Image">
 				
 				<h1 class="hero-title">Where Every Outfit Finds Its <span class="Highlighttext">Perfect Match</span></h1>
-				<a href="about.html" class="hero-button">
+				<a href="about.php" class="hero-button">
 					<button type="button"><h3>About Us</h3></button>
 				</a>
 			</div>
@@ -51,17 +54,22 @@
         <h2 class="section-title">Highlights</h2>
         <div class="cards-container">
             
-            <a href="Clothing/menClothesList.html"><div class="card" style="background-image: url('img/cloCard.jpg');">
+            <a href="Clothing/menClothesList.php"><div class="card" style="background-image: url('img/cloCard.jpg');">
                 <div class="card-text">Clothings</div>
             </div></a>
             
-            <a  href="Shoes/menShoeList.html"><div class="card" style="background-image: url('img/shoeCard.jpeg');">
+            <a  href="Shoes/menShoeList.php"><div class="card" style="background-image: url('img/shoeCard.jpeg');">
                 <div class="card-text">Shoes</div>
             </div></a>
         </div>
+
+        <?php
+            $text1 = "This is my first text in a variable.";
+            echo $text1;
+        ?>
     </section>
 
 
-    
+
 </body>
 </html>
