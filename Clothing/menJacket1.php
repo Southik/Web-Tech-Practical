@@ -58,11 +58,6 @@
                     </div>
                 </div>
 
-                <div class="product-actions">
-                    <a href="../shoppingCartClothing.php">
-                        <button type="button" class="nav-button">Add to Shopping Cart</button>
-                    </a>
-                </div>
                 <p class="pickup-note">Free pickup available in store.</p>
             </div>
         </div>

@@ -10,6 +10,7 @@
 <body>
 
     <nav class="navbar">
+        
         <div class="nav-left">
             <a href="Shoes/menShoeList.php"><u>Shoes</u></a>
             <a href="Clothing/menClothesList.php"><u>Clothing</u></a>
@@ -20,6 +21,19 @@
 
         </div>
         <script src="lightMode.js" defer></script>
+        <?php
+            session_start();
+            $cartCount = 0;
+            if (isset($_SESSION['cart'])) {
+                foreach ($_SESSION['cart'] as $item) {
+                    $cartCount += $item['quantity'];
+                }
+            }
+            ?>
+            <a href="shoppingCart.php" class="cart-icon">
+                🛒 <?= $cartCount > 0 ? "($cartCount)" : "" ?>
+            </a>
+
 
     </nav>
 
