@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['user_id'] = $_POST['username'];
+
+    $redirect = $_SESSION['redirect_after_login'] ?? 'index.php';
+    unset($_SESSION['redirect_after_login']);
+    header("Location: $redirect");
+    exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>

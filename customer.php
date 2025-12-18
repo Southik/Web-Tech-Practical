@@ -1,5 +1,22 @@
 <?php
 session_start();
+
+/* SET LOGIN SESSION */
+if (
+    isset($_GET['username'], $_GET['password']) &&
+    $_GET['username'] !== '' &&
+    $_GET['password'] !== ''
+) {
+    $_SESSION['user_id'] = $_GET['username'];
+}
+
+/* REDIRECT BACK AFTER LOGIN */
+if (isset($_SESSION['redirect_after_login'])) {
+    $redirect = $_SESSION['redirect_after_login'];
+    unset($_SESSION['redirect_after_login']);
+    header("Location: $redirect");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,18 +42,7 @@ session_start();
 	<table>
 		<tr><th>Firstname:</th><td>Michael</td></tr>
 		<tr><th>Lastname:</th><td>Jackson</td></tr>
-		<tr><th>Password:</th><td>Wslknoihoi324DCC</td></tr>
-	</table><br>
-
-	<p>This is the current User Data</p>
-
-	<div class="customer-buttons">Change Info</div><br>
-
-	<div>
-		<a href="login.php" class="customer-buttons">Go Back</a>
-		<a href="logout.php" class="customer-buttons">Logout</a>
-		<a href="index.php" class="customer-buttons">Unregister</a>
-	</div>
+	</table>
 </div>
 
 </body>
