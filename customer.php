@@ -1,28 +1,5 @@
 <?php
 session_start();
-
-/* =============================
-   ADD: SET LOGIN SESSION
-   ============================= */
-if (
-    isset($_GET['username']) &&
-    isset($_GET['password']) &&
-    $_GET['username'] !== '' &&
-    $_GET['password'] !== ''
-) {
-    $_SESSION['user_id'] = $_GET['username'];
-}
-
-
-/* =============================
-   ADD: REDIRECT BACK TO CART
-   ============================= */
-if (isset($_SESSION['redirect_after_login'])) {
-    $redirect = $_SESSION['redirect_after_login'];
-    unset($_SESSION['redirect_after_login']);
-    header("Location: $redirect");
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html>

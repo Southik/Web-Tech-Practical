@@ -1,17 +1,24 @@
 <?php
 session_start();
 
+/* =============================
+   INITIALIZE CART
+   ============================= */
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-/* AUTO UPDATE QUANTITY */
+/* =============================
+   AUTO UPDATE QUANTITY
+   ============================= */
 if (isset($_POST['update_qty'])) {
     $_SESSION['cart'][$_POST['pid']]['quantity'] =
         max(1, (int)$_POST['quantity']);
 }
 
-/* REMOVE ITEM */
+/* =============================
+   REMOVE ITEM
+   ============================= */
 if (isset($_POST['remove'])) {
     unset($_SESSION['cart'][$_POST['pid']]);
 }
@@ -21,34 +28,64 @@ if (isset($_POST['remove'])) {
    ============================= */
 if (isset($_POST['place_order'])) {
 
-    if (
-        !isset($_SESSION['user_id']) ||
-        $_SESSION['user_id'] === ''
-    ) {
+    // AUTH CHECK
+    if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] === '') {
         $_SESSION['redirect_after_login'] = 'shoppingCart.php';
         header("Location: login.php");
         exit;
     }
 
-    // SAVE ORDER
-    $order  = "User: " . $_SESSION['user_id'] . "\n";
-    $order .= "Date: " . date("Y-m-d H:i:s") . "\n";
+    // ❗ PREVENT EMPTY CART ORDERS
+    if (empty($_SESSION['cart'])) {
+        $orderError = "Your cart is empty.";
+    } else {
 
-    foreach ($_SESSION['cart'] as $item) {
-        $order .= $item['name'] . " x" . $item['quantity'] . "\n";
+        $ordersFile = __DIR__ . "/orders.json";
+
+        // Ensure file exists
+        if (!file_exists($ordersFile)) {
+            file_put_contents($ordersFile, "[]");
+        }
+
+        // Load existing orders
+        $orders = json_decode(file_get_contents($ordersFile), true);
+        if (!is_array($orders)) {
+            $orders = [];
+        }
+
+        // Create new order
+        $newOrder = [
+            "user" => $_SESSION['user_id'],
+            "date" => date("Y-m-d H:i:s"),
+            "items" => []
+        ];
+
+        foreach ($_SESSION['cart'] as $item) {
+            $newOrder["items"][] = [
+                "name" => $item['name'],
+                "price" => $item['price'],
+                "quantity" => $item['quantity']
+            ];
+        }
+
+        // Save
+        $orders[] = $newOrder;
+        file_put_contents(
+            $ordersFile,
+            json_encode($orders, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+            LOCK_EX
+        );
+
+        $_SESSION['cart'] = [];
+        $orderSuccess = "Order placed successfully!";
     }
-
-    $order .= "-------------------------\n";
-    file_put_contents("orders.txt", $order, FILE_APPEND);
-
-    $_SESSION['cart'] = [];
-    $orderSuccess = "Order placed successfully!";
 }
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -57,13 +94,17 @@ if (isset($_POST['place_order'])) {
 <h1 align="center">Shopping Cart</h1>
 
 <?php if (!empty($orderSuccess)): ?>
-<p style="color:green;text-align:center;font-weight:bold;">
-    <?= $orderSuccess ?>
-</p>
+    <p style="color: green; text-align: center; font-weight: bold;">
+        <?= $orderSuccess ?>
+    </p>
 <?php endif; ?>
 
 <?php if (empty($_SESSION['cart'])): ?>
-    <center><h2>SHOPPING CART IS EMPTY</h2></center>
+
+    <center>
+        <h2>SHOPPING CART IS EMPTY</h2>
+    </center>
+
 <?php else: ?>
 
 <table border="1" align="center" cellpadding="10">
@@ -83,7 +124,9 @@ foreach ($_SESSION['cart'] as $pid => $item):
 ?>
 <tr>
     <td><?= htmlspecialchars($item['name']) ?></td>
-    <td><?= number_format($item['price'],2) ?></td>
+    <td><?= number_format($item['price'], 2) ?></td>
+
+    <!-- AUTO UPDATE QUANTITY -->
     <td>
         <form method="post">
             <input type="hidden" name="pid" value="<?= $pid ?>">
@@ -95,7 +138,10 @@ foreach ($_SESSION['cart'] as $pid => $item):
                    onchange="this.form.submit()">
         </form>
     </td>
-    <td><?= number_format($itemTotal,2) ?></td>
+
+    <td><?= number_format($itemTotal, 2) ?></td>
+
+    <!-- REMOVE ITEM -->
     <td>
         <form method="post">
             <input type="hidden" name="pid" value="<?= $pid ?>">
@@ -112,13 +158,16 @@ $total = $subtotal + $tax;
 ?>
 
 <center>
-    <p>Subtotal: €<?= number_format($subtotal,2) ?></p>
-    <p>Tax (20%): €<?= number_format($tax,2) ?></p>
-    <h3>Total: €<?= number_format($total,2) ?></h3>
+    <p>Subtotal: €<?= number_format($subtotal, 2) ?></p>
+    <p>Tax (20%): €<?= number_format($tax, 2) ?></p>
+    <h3>Total: €<?= number_format($total, 2) ?></h3>
 
     <form method="post">
-        <button name="place_order">Place Order</button>
+        <button type="submit" name="place_order">
+            Place Order
+        </button>
     </form>
+
 </center>
 
 <?php endif; ?>
