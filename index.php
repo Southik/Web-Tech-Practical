@@ -17,6 +17,7 @@
         </div>
         <div class="nav-right">
             <a href="login.php" class="login-button"> ➔ Customer Login </a>
+			<a href="customer.php" class="login-button">My Account</a>
             <a class="login-button" id="mode-toggle">Toggle Light Mode</a>
 
         </div>

@@ -1,3 +1,62 @@
+<?php
+session_start();
+
+function loadJson($path) {
+    if (!file_exists($path)) return [];
+    $content = file_get_contents($path);
+    if ($content === '' || $content === false) return [];
+    $data = json_decode($content, true);
+    return is_array($data) ? $data : [];
+}
+
+function saveJson($path, $data) {
+    file_put_contents($path, json_encode($data, JSON_PRETTY_PRINT));
+}
+
+$regError = '';
+$regSuccess = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email    = $_POST['Email'] ?? '';
+    $password = $_POST['Password'] ?? '';
+    $confirm  = $_POST['Confirmed-Password'] ?? '';
+
+    if ($password !== $confirm) {
+        $regError = "Passwords do not match.";
+    } else {
+        $customersPath = __DIR__ . '/customers.json';
+        $customers     = loadJson($customersPath);
+
+        foreach ($customers as $c) {
+            if (($c['Email'] ?? '') === $email) {
+                $regError = "A user with this email already exists.";
+                break;
+            }
+        }
+
+        if ($regError === '') {
+            $newCustomer = [
+                'Firstname'        => $_POST['Firstname']        ?? '',
+                'Lastname'         => $_POST['Lastname']         ?? '',
+                'Email'            => $email,
+                'Telephone-Number' => $_POST['Telephone-Number'] ?? '',
+                'Date-of-birth'    => $_POST['Date-of-birth']    ?? '',
+                'Password'         => $password,
+                'Address'          => $_POST['Address']          ?? '',
+                'Gender'           => $_POST['Gender']           ?? '',
+                'Privacy-policy'   => isset($_POST['Privacy-policy']),
+                'blocked'          => false
+            ];
+
+            $customers[] = $newCustomer;
+            saveJson($customersPath, $customers);
+
+            $regSuccess = "Registration successful. You can now log in.";
+        }
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,8 +77,15 @@
 <br>
     <div class="registration-form-container">
         <h1 class="registration-heading">Customer Registration</h1>
-
-        <form action="customer.php" method="get" autocomplete="on">
+		
+		<?php if ($regError): ?>
+			<p style="color:red;"><?php echo htmlspecialchars($regError); ?></p>
+		<?php endif; ?>
+		<?php if ($regSuccess): ?>
+			<p style="color:green;"><?php echo htmlspecialchars($regSuccess); ?></p>
+		<?php endif; ?>
+		
+        <form action="registration.php" method="post" autocomplete="on">
             <label for="firstname">Firstname:</label><br/>
             <input type="text" id="firstname" name="Firstname" placeholder="Firstname" required><br/><br/>
 

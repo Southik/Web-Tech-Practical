@@ -1,22 +1,10 @@
 <?php
 session_start();
-
-/* SET LOGIN SESSION */
-if (
-    isset($_GET['username'], $_GET['password']) &&
-    $_GET['username'] !== '' &&
-    $_GET['password'] !== ''
-) {
-    $_SESSION['user_id'] = $_GET['username'];
-}
-
-/* REDIRECT BACK AFTER LOGIN */
-if (isset($_SESSION['redirect_after_login'])) {
-    $redirect = $_SESSION['redirect_after_login'];
-    unset($_SESSION['redirect_after_login']);
-    header("Location: $redirect");
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
     exit;
 }
+$user = $_SESSION['user'] ?? [];
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,6 +21,9 @@ if (isset($_SESSION['redirect_after_login'])) {
     </div>
     <div class="nav-right">
         <a href="login.php" class="login-button">Customer Login</a>
+		<a href="logout.php"> 
+            <button type="button" class="logout-button">Logout</button>
+        </a>
     </div>
 </nav>
 
@@ -40,9 +31,14 @@ if (isset($_SESSION['redirect_after_login'])) {
 	<h1> CUSTOMER PROFILE </h1>
 
 	<table>
-		<tr><th>Firstname:</th><td>Michael</td></tr>
-		<tr><th>Lastname:</th><td>Jackson</td></tr>
+		<tr><th>Firstname:</th><td><?= htmlspecialchars($user['Firstname'] ?? '') ?></td></tr>
+		<tr><th>Lastname:</th><td><?= htmlspecialchars($user['Lastname'] ?? '') ?></td></tr>
 	</table>
+	
+	<a href="myOrders.php" class="customer-buttons">
+		<button type="button">Manage Orders</button>
+	</a>
+	
 </div>
 
 </body>

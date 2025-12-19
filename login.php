@@ -1,16 +1,49 @@
 <?php
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $_SESSION['user_id'] = $_POST['username'];
+function loadJson($path) {
+    if (!file_exists($path)) return [];
+    $content = file_get_contents($path);
+    if ($content === '' || $content === false) return [];
+    $data = json_decode($content, true);
+    return is_array($data) ? $data : [];
+}
 
-    $redirect = $_SESSION['redirect_after_login'] ?? 'index.php';
-    unset($_SESSION['redirect_after_login']);
-    header("Location: $redirect");
-    exit;
+$loginError = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email    = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    $customers = loadJson(__DIR__ . '/customers.json');
+
+    $found = null;
+    foreach ($customers as $c) {
+        if (($c['Email'] ?? '') === $email && ($c['Password'] ?? '') === $password) {
+            $found = $c;
+            break;
+        }
+    }
+
+    if ($found) {
+    $_SESSION['user_id'] = $found['Email'];
+    $_SESSION['user']    = $found;
+
+    if ($found['Email'] === 'admin1@example.com') {
+        $_SESSION['role'] = 'admin';
+        header('Location: adminOrders.php');
+        exit;
+    } else {
+        $_SESSION['role'] = 'customer';
+        $redirect = $_SESSION['redirect_after_login'] ?? 'customer.php';
+        unset($_SESSION['redirect_after_login']);
+        header("Location: $redirect");
+        exit;
+    }
+}
+
 }
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,8 +62,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </nav>
         <div class="login-form-container">
             <h1>Customer Login</h1>
-
-            <form action="customer.php" method="get">
+			<?php if ($loginError): ?>
+				<p style="color:red;"><?php echo htmlspecialchars($loginError); ?></p>
+			<?php endif; ?>
+			
+            <form action="login.php" method="post">
                 <label for="username">Username:</label><br/>
                 <input type="text" id="username" name="username" placeholder="abc@gmail.com" required><br/><br/>
 

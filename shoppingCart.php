@@ -17,14 +17,33 @@ if (isset($_POST['remove'])) {
 
 
 if (isset($_POST['place_order'])) {
+	 if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] === '') {
+        $_SESSION['redirect_after_login'] = 'shoppingCart.php';
+        $orderError = "Please log in before placing an order.";
+		header('Location: login.php');
+		exit;
+	 }
+    $customersFile = __DIR__ . '/customers.json';
+    $customers = file_exists($customersFile)
+        ? json_decode(file_get_contents($customersFile), true)
+        : [];
+    $isBlocked = false;
+    foreach ($customers as $c) {
+        if (($c['Email'] ?? '') === $_SESSION['user_id'] && !empty($c['blocked'])) {
+            $isBlocked = true;
+            break;
+        }
+    }
 
-    if (empty($_SESSION['cart'])) {
+    if ($isBlocked) {
+        $orderError = "Your account is blocked by the administrator.";
+    } elseif (empty($_SESSION['cart'])) {
         $orderError = "Your cart is empty.";
     } else {
 
+
         $ordersFile = __DIR__ . "/orders.json";
 
-        // Ensure file exists
         if (!file_exists($ordersFile)) {
             file_put_contents($ordersFile, "[]");
         }
@@ -59,10 +78,13 @@ if (isset($_POST['place_order'])) {
 
         $tax   = $subtotal * 0.20;
         $total = $subtotal + $tax;
-
+		$orderId = uniqid('ord_');
         $newOrder = [
-            "user" => $_SESSION['user_id'] ?? "guest",
+			"order_id" => $orderId,
+            "user" => $_SESSION['user_id'],
             "date" => date("Y-m-d H:i:s"),
+			"status" => "new",
+			"admin_comment" => "",
             "subtotal" => number_format($subtotal, 2, '.', ''),
             "tax" => number_format($tax, 2, '.', ''),
             "total" => number_format($total, 2, '.', ''),
@@ -80,6 +102,7 @@ if (isset($_POST['place_order'])) {
         $_SESSION['cart'] = [];
         $orderSuccess = "Order placed successfully!";
     }
+
 }
 ?>
 <!DOCTYPE html>
