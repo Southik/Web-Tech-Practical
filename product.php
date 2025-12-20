@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-/* =============================
-   LOAD CATEGORY + PRODUCT
-   ============================= */
 
 $category = $_GET['category'] ?? 'clothing';
 
@@ -36,9 +33,6 @@ if (!isset($_GET['pid']) || trim($_GET['pid']) === '') {
     }
 }
 
-/* =============================
-   CART INITIALIZATION
-   ============================= */
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
@@ -46,13 +40,10 @@ if (!isset($_SESSION['cart'])) {
 
 $addedMessage = "";
 
-/* =============================
-   ADD PRODUCT TO CART
-   ============================= */
 
 if (isset($_POST['add']) && $product !== null) {
 
-    $cartKey = $product['pid']; // ✅ UNIQUE PER PRODUCT
+    $cartKey = $product['pid']; 
 
     if (isset($_SESSION['cart'][$cartKey])) {
         $_SESSION['cart'][$cartKey]['quantity']++;
@@ -93,7 +84,6 @@ if (isset($_POST['add']) && $product !== null) {
 
 <?php if ($error !== null): ?>
 
-    <!-- ERROR -->
     <section class="product-detail">
         <h1 class="page-title">Error</h1>
         <p><?= htmlspecialchars($error) ?></p>
@@ -104,7 +94,6 @@ if (isset($_POST['add']) && $product !== null) {
 
 <?php else: ?>
 
-    <!-- PRODUCT -->
     <section class="product-detail">
         <div class="product-layout full-width-layout">
 
@@ -134,7 +123,6 @@ if (isset($_POST['add']) && $product !== null) {
                     €<?= number_format($product['price'], 2) ?>
                 </div>
 
-                <!-- ADD TO CART -->
                 <div class="product-actions">
                     <form method="post">
                         <input type="hidden" name="add" value="1">
