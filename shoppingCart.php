@@ -5,28 +5,31 @@ if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
+$discountPercent = 0;
+$discountAmount = 0.0;
+
 if (isset($_POST['update_qty'])) {
     $pid = $_POST['pid'];
-    $_SESSION['cart'][$pid]['quantity'] =
-        max(1, (int)$_POST['quantity']);
+    $_SESSION['cart'][$pid]['quantity'] = max(1, (int)$_POST['quantity']);
 }
 
 if (isset($_POST['remove'])) {
     unset($_SESSION['cart'][$_POST['pid']]);
 }
 
-
 if (isset($_POST['place_order'])) {
-	 if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] === '') {
+
+    if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] === '') {
         $_SESSION['redirect_after_login'] = 'shoppingCart.php';
-        $orderError = "Please log in before placing an order.";
-		header('Location: login.php');
-		exit;
-	 }
+        header('Location: login.php');
+        exit;
+    }
+
     $customersFile = __DIR__ . '/customers.json';
     $customers = file_exists($customersFile)
         ? json_decode(file_get_contents($customersFile), true)
         : [];
+
     $isBlocked = false;
     foreach ($customers as $c) {
         if (($c['Email'] ?? '') === $_SESSION['user_id'] && !empty($c['blocked'])) {
@@ -41,7 +44,6 @@ if (isset($_POST['place_order'])) {
         $orderError = "Your cart is empty.";
     } else {
 
-
         $ordersFile = __DIR__ . "/orders.json";
 
         if (!file_exists($ordersFile)) {
@@ -53,38 +55,57 @@ if (isset($_POST['place_order'])) {
             $orders = [];
         }
 
+        // ===== TASK 3: DISCOUNT LOGIC =====
+        $userOrderCount = 0;
+        foreach ($orders as $o) {
+            if (($o['user'] ?? '') === $_SESSION['user_id']) {
+                $userOrderCount++;
+            }
+        }
+
+        $currentOrderNumber = $userOrderCount + 1;
+
+        if ($currentOrderNumber % 20 === 0) {
+            $discountPercent = 20;
+        } elseif ($currentOrderNumber % 10 === 0) {
+            $discountPercent = 10;
+        }
+        // =================================
+
         $items = [];
         $subtotal = 0.0;
 
         foreach ($_SESSION['cart'] as $item) {
-
             $unitPrice = (float)$item['price'];
             $quantity  = (int)$item['quantity'];
             $itemTotal = $unitPrice * $quantity;
 
-            $unitPriceStr = number_format($unitPrice, 2, '.', '');
-            $itemTotalStr = number_format($itemTotal, 2, '.', '');
-
             $items[] = [
                 "pid" => $item['pid'],
                 "name" => $item['name'],
-                "unit_price" => $unitPriceStr,
+                "unit_price" => number_format($unitPrice, 2, '.', ''),
                 "quantity" => $quantity,
-                "price" => $itemTotalStr
+                "price" => number_format($itemTotal, 2, '.', '')
             ];
 
             $subtotal += $itemTotal;
         }
 
-        $tax   = $subtotal * 0.20;
-        $total = $subtotal + $tax;
-		$orderId = uniqid('ord_');
+        $tax = $subtotal * 0.20;
+        $totalBeforeDiscount = $subtotal + $tax;
+
+        $discountAmount = ($totalBeforeDiscount * $discountPercent) / 100;
+        $total = $totalBeforeDiscount - $discountAmount;
+
         $newOrder = [
-			"order_id" => $orderId,
+            "order_id" => uniqid('ord_'),
             "user" => $_SESSION['user_id'],
             "date" => date("Y-m-d H:i:s"),
-			"status" => "new",
-			"admin_comment" => "",
+            "status" => "new",
+            "admin_comment" => "",
+            "order_number" => $currentOrderNumber,
+            "discount_percent" => $discountPercent,
+            "discount_amount" => number_format($discountAmount, 2, '.', ''),
             "subtotal" => number_format($subtotal, 2, '.', ''),
             "tax" => number_format($tax, 2, '.', ''),
             "total" => number_format($total, 2, '.', ''),
@@ -102,7 +123,6 @@ if (isset($_POST['place_order'])) {
         $_SESSION['cart'] = [];
         $orderSuccess = "Order placed successfully!";
     }
-
 }
 ?>
 <!DOCTYPE html>
@@ -136,15 +156,14 @@ if (isset($_POST['place_order'])) {
 <tr>
     <th>Product</th>
     <th>Unit Price (€)</th>
-    <th>Quantity</th>
+    <th>Quantity</th> 
     <th>Total (€)</th>
-    <th>Remove</th>
+    <th>Remove</th> 
 </tr>
 
 <?php
 $displaySubtotal = 0.0;
 foreach ($_SESSION['cart'] as $pid => $item):
-
     $unitPrice = (float)$item['price'];
     $rowTotal  = $unitPrice * (int)$item['quantity'];
     $displaySubtotal += $rowTotal;
@@ -152,23 +171,16 @@ foreach ($_SESSION['cart'] as $pid => $item):
 <tr>
     <td><?= htmlspecialchars($item['name']) ?></td>
     <td><?= number_format($unitPrice, 2) ?></td>
-
     <td>
-        <form method="post" action="shoppingCart.php">
+        <form method="post">
             <input type="hidden" name="pid" value="<?= $pid ?>">
             <input type="hidden" name="update_qty" value="1">
-            <input type="number"
-                   name="quantity"
-                   value="<?= $item['quantity'] ?>"
-                   min="1"
-                   onchange="this.form.submit()">
+            <input type="number" name="quantity" value="<?= $item['quantity'] ?>" min="1" onchange="this.form.submit()">
         </form>
     </td>
-
     <td><?= number_format($rowTotal, 2) ?></td>
-
     <td>
-        <form method="post" action="shoppingCart.php">
+        <form method="post">
             <input type="hidden" name="pid" value="<?= $pid ?>">
             <input type="hidden" name="remove" value="1">
             <button type="submit">✖</button>
@@ -179,7 +191,7 @@ foreach ($_SESSION['cart'] as $pid => $item):
 </table>
 
 <?php
-$displayTax   = $displaySubtotal * 0.20;
+$displayTax = $displaySubtotal * 0.20;
 $displayTotal = $displaySubtotal + $displayTax;
 ?>
 
@@ -188,15 +200,10 @@ $displayTotal = $displaySubtotal + $displayTax;
     <p>Tax (20%): €<?= number_format($displayTax, 2) ?></p>
     <h3>Total: €<?= number_format($displayTotal, 2) ?></h3>
 
-    <form id="placeOrderForm" method="post" action="shoppingCart.php" style="display:none;">
+    <form method="post">
         <input type="hidden" name="place_order" value="1">
+        <button type="submit">Place Order</button>
     </form>
-
-    <button class="nav-button"
-            type="button"
-            onclick="document.getElementById('placeOrderForm').submit();">
-        Place Order
-    </button>
 </center>
 
 <?php endif; ?>

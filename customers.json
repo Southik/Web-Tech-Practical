@@ -1,0 +1,14 @@
+[
+    {
+        "Firstname": "Christ",
+        "Lastname": "Djoumessi",
+        "Email": "djoumessichrist64@gmail.com",
+        "Telephone-Number": "+4915510079351",
+        "Date-of-birth": "2007-07-03",
+        "Password": "QWERTZ123q",
+        "Address": "Esplanade 10",
+        "Gender": "Male",
+        "Privacy-policy": true,
+        "blocked": false
+    }
+]
